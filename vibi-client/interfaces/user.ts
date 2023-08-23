@@ -1,0 +1,3 @@
+interface user {
+    name: string
+}
