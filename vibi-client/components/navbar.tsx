@@ -4,7 +4,7 @@ export default function NavBar (){
     return(
         <>
         <nav>
-
+        <h1>dsads</h1>
         </nav>
         </>
     )
