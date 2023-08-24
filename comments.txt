@@ -1,0 +1,19 @@
+Update model: npx prisma generate   npx prisma db push
+
+
+Prisma Studio: https://www.prisma.io/studio 
+
+
+Figma: https://www.figma.com/file/9KnixUoZL8EWLwpz624HoR/Proyecto-Vibi?node-id=1%3A2672&mode=dev
+Trello: https://trello.com/b/sDagH4C4/proyecto-vibi
+Slack: https://app.slack.com/client/T05NHG6PB6V/D05N513J4HG
+MER: https://lucid.app/lucidchart/931ffa8a-4370-41ca-9960-b1c13049054b/edit?invitationId=inv_0ef665fa-ed46-4584-986c-ff919d270898&page=0_0#
+Discord: https://discord.com/channels/1044956872370827364/1088513649930408067
+Repo: https://github.com/EugeniaGramajo/vibi
+
+
+
+Librerías:
+https://www.react-hook-form.com/
+
+
