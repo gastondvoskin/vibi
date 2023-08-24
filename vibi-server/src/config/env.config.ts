@@ -1,5 +1,5 @@
 const env = {
-	port: process.env.PORT || 3000,
+    port: process.env.PORT || 3000,
     databaseUrl: process.env.DATABASE_URL,
     secretKey: process.env.SECRET_KEY || 'secret',
     saltKey: process.env.SALTKEY,
@@ -8,3 +8,4 @@ const env = {
 }
 
 export default env
+
