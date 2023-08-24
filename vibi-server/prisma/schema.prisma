@@ -31,10 +31,11 @@ model Property {
     urls_photos String[]
     urls_videos String[]
 
-    user             User   @relation(fields: [user_id_relation], references: [user_id])
+    user   User   @relation(fields: [user_id_relation], references: [user_id])
     user_id_relation String
 
     propertyInformation PropertyInformation?
+    propertyDetail PropertyDetail?
 
 }
 
@@ -48,6 +49,23 @@ model PropertyInformation {
     halft_bath Int
 
     property Property @relation(fields: [property_Id_reference], references: [property_Id])
+    property_Id_reference String  @unique
+}
+
+model PropertyDetail{
+    propertyDetail_Id String @id @default(uuid())
+    luxury Boolean
+    terrace Boolean
+    lobby  Boolean
+    balcony Boolean
+    air_conditioning Boolean
+    gym Boolean
+    courtyard Boolean
+    barbecue Boolean
+    coworking Boolean
+    natural_gas Boolean
+
+    property Property @relation(fields: [property_Id_reference],references: [property_Id])
     property_Id_reference String  @unique
 }
 
