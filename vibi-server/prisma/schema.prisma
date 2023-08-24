@@ -36,7 +36,7 @@ model Property {
 
     propertyInformation PropertyInformation?
     propertyDetail PropertyDetail?
-
+    propertyAddress PropertyAdress?
 }
 
 model PropertyInformation {
@@ -69,3 +69,15 @@ model PropertyDetail{
     property_Id_reference String  @unique
 }
 
+model PropertyAdress {
+    propertyAddress_Id String @id @default(uuid())
+    street String
+    district String
+    city String
+    urbanization String
+    floor Int
+    property_type String
+
+    property Property @relation(fields: [property_Id_reference], references: [property_Id])
+    property_Id_reference String @unique
+}
