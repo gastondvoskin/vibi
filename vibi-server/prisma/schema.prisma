@@ -1,0 +1,53 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL") // uses connection pooling
+}
+
+enum User_type {
+    client
+    admin
+}
+
+model User {
+    user_id  String    @id @default(uuid())
+    name     String
+    email    String    @unique
+    phone    String
+    password String
+    type     User_type
+
+    property Property[]
+}
+
+model Property {
+    property_Id String   @id @default(uuid())
+    condition   String
+    final_price Int?
+    description String
+    urls_photos String[]
+    urls_videos String[]
+
+    user             User   @relation(fields: [user_id_relation], references: [user_id])
+    user_id_relation String
+
+    propertyInformation PropertyInformation?
+
+}
+
+model PropertyInformation {
+    propertyInformation_Id String @id @default(uuid())
+    construction_year Int
+    m2_indoor Float
+    m2_total Float
+    rooms Int
+    baths Int
+    halft_bath Int
+
+    property Property @relation(fields: [property_Id_reference], references: [property_Id])
+    property_Id_reference String  @unique
+}
+
