@@ -24,7 +24,7 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
 
 		const user = prisma.user.findUnique({
 			where: {
-				id: (decodedToken as DecodedToken).id
+				user_id: (decodedToken as DecodedToken).id
 			}
 		})
 		if (!user) {

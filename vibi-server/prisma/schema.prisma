@@ -3,118 +3,51 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("DATABASE_URL") // uses connection pooling
+    provider = "postgresql"
+    url      = env("DATABASE_URL") // uses connection pooling
+}
+
+enum User_type {
+    client
+    admin
 }
 
 model User {
-    id             String  @id @default(uuid())
-    name           String
-    last_name      String
-    email          String  @unique
-    image          String?
-    password       String
-    identification Json? //validar al hacer la ruta
-    description    String?
+    user_id  String    @id @default(uuid())
+    name     String
+    email    String    @unique
+    phone    String
+    password String
+    type     User_type
 
-    payments Payment[]
-
-    ratings_made Rating[] @relation("ratings_made")
-
-    ratings_received Rating[] @relation("ratings_received")
-
-    car_owned Car[]
-
-    travels_created Travel[]  @relation("travel_maker")
-    traveler        Traveler?
+    property Property[]
 }
 
-model Rating {
-    id          String @id @default(uuid())
-    stars       Int
+model Property {
+    property_Id String   @id @default(uuid())
+    condition   String
+    final_price Int?
     description String
+    urls_photos String[]
+    urls_videos String[]
 
-    ranker    User   @relation("ratings_made", fields: [ranker_id], references: [id])
-    ranker_id String
+    user             User   @relation(fields: [user_id_relation], references: [user_id])
+    user_id_relation String
 
-    ranked    User   @relation("ratings_received", fields: [ranked_id], references: [id])
-    ranked_id String
+    propertyInformation PropertyInformation?
 
-    travel    Travel @relation(fields: [travel_id], references: [id])
-    travel_id String
 }
 
-model Car {
-    id             String @id @default(uuid())
-    brand          String
-    identification String
-    color          String
+model PropertyInformation {
+    propertyInformation_Id String @id @default(uuid())
+    construction_year Int
+    m2_indoor Float
+    m2_total Float
+    rooms Int
+    baths Int
+    halft_bath Int
 
-    travels Travel[]
-
-    car_owner    User?  @relation(fields: [car_owner_id], references: [id])
-    car_owner_id String
+    property Property @relation(fields: [property_Id_reference], references: [property_Id])
+    property_Id_reference String  @unique
 }
 
-model Travel {
-    id            String   @id @default(uuid())
-    origin        String
-    destination   String
-    day_of_travel DateTime
-    places        Int
-    description   String
-    price         Int
-
-    car    Car?    @relation(fields: [car_id], references: [id])
-    car_id String?
-
-    payments  Payment[]
-    travelers Traveler[]
-    ratings   Rating[]
-
-    creator    User   @relation("travel_maker", fields: [creator_id], references: [id])
-    creator_id String
-}
-
-enum State {
-    process
-    completed
-    rejected
-}
-
-model Stripe {
-    id        String  @id @default(uuid())
-    state     State
-    payment    Payment? 
-}
-
-enum Method {
-    stripe
-    cash
-}
-
-model Payment {
-    id     String @id @default(uuid())
-    method Method
-    amount Int
-
-    travels   Travel? @relation(fields: [travel_id], references: [id])
-    travel_id String
-
-    user   User?   @relation(fields: [user_id], references: [id])
-    user_id String?
-
-    stripe    Stripe? @relation(fields: [stripe_id], references: [id])
-    stripe_id String? @unique
-}
-
-
-
-model Traveler {
-    id       String @id @default(uuid())
-    userId   String @unique
-    travelId String
-
-    user   User   @relation(fields: [userId], references: [id])
-    travel Travel @relation(fields: [travelId], references: [id])
-}
