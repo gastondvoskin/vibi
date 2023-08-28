@@ -20,8 +20,8 @@ model User {
     password String
     type     User_type
 
-    publication Publication[]
-    favorites Favorites[]
+     publication Publication[]
+     favorites Favorites[]
 }
 
 model Property {
@@ -32,11 +32,11 @@ model Property {
     urls_photos String[]
     urls_videos String[]
 
-    publication Publication @relation(fields: [publication_Id_Reference], references: [publication_Id])
-    publication_Id_Reference String  @unique
+    publication Publication? @relation(fields: [publication_Id_Reference], references: [publication_Id])
+    publication_Id_Reference String?  @unique
     propertyInformation PropertyInformation?
     propertyDetail PropertyDetail?
-    propertyAddress PropertyAddress? 
+    propertyAddress PropertyAddress?
 }
 
 model PropertyInformation {
@@ -48,8 +48,8 @@ model PropertyInformation {
     baths Int
     halft_bath Int
 
-    property Property @relation(fields: [property_Id_Reference], references: [property_Id])
-    property_Id_Reference String  @unique
+    property Property? @relation(fields: [property_Id_Reference], references: [property_Id])
+    property_Id_Reference String?  @unique
 }
 
 model PropertyDetail{
@@ -65,8 +65,8 @@ model PropertyDetail{
     coworking Boolean
     natural_gas Boolean
 
-    property Property @relation(fields: [property_Id_Reference],references: [property_Id])
-    property_Id_Reference String  @unique
+    property Property? @relation(fields: [property_Id_Reference],references: [property_Id])
+    property_Id_Reference String?  @unique
 }
 
 model PropertyAddress {
@@ -78,35 +78,34 @@ model PropertyAddress {
     floor Int
     property_type String
 
-    property Property @relation(fields: [property_Id_Reference], references: [property_Id])
-    property_Id_Reference String @unique
+    property Property? @relation(fields: [property_Id_Reference], references: [property_Id])
+    property_Id_Reference String? @unique
 }
 
 model Publication{
-     publication_Id String @id @default(uuid())
-     plan String
-     pro_photos Boolean
-     pro_video Boolean
-     pro_sign Boolean
-     pro_quoted Boolean
-     pro_analysis Boolean
-     pro_contracts Boolean
-     pro_tour Boolean
-     isActive Boolean
-     property Property?
-     user   User   @relation(fields: [user_Id_Reference], references: [user_Id])
-     user_Id_Reference String
-     favorites Favorites[]
-
+    publication_Id String @id @default(uuid())
+    plan String
+    pro_photos Boolean
+    pro_video Boolean
+    pro_sign Boolean
+    pro_quoted Boolean
+    pro_analysis Boolean
+    pro_contracts Boolean
+    pro_tour Boolean
+    isActive Boolean @default(true)
+    property Property?
+    user   User?   @relation(fields: [user_Id_Reference], references: [user_Id])
+    user_Id_Reference String?
+    favorites Favorites[]
  }
 
 
-model Favorites{
-    user User @relation(fields: [user_Id_Reference],references: [user_Id])
-    user_Id_Reference String 
-    publication Publication @relation(fields: [publication_Id_Reference],references: [publication_Id])
-    publication_Id_Reference String 
+ model Favorites{
+     user User @relation(fields: [user_Id_Reference],references: [user_Id])
+     user_Id_Reference String 
+      publication Publication @relation(fields: [publication_Id_Reference],references: [publication_Id])
+      publication_Id_Reference String 
 
 
-    @@id([user_Id_Reference,publication_Id_Reference])
-}
+     @@id([user_Id_Reference,publication_Id_Reference])
+ }
