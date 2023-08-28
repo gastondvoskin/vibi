@@ -16,11 +16,11 @@ export class UserController {
 
   async registerUser(req: Request, res: Response) {
     try {
-      const id = req.body;
+      /* const id = req.body;
       const user = await prisma.user.findUnique({
         where: { user_id: id },
         include: { property: { include: { propertyInformation: true } } },
-      });
+      }); */
       res.status(200).json("Estoy funcionando");
     } catch (error) {
       res.status(400).json("No Estoy funcionando");
