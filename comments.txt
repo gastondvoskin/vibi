@@ -17,6 +17,12 @@ Librerías:
 https://www.react-hook-form.com/
 
 
+
+
+User stories
+Como usuario quiero comprar una casa porque me quiero independizar de mis padres. 
+Como usuario quiero comprar una casa porque y no tengo el capital suficiente. 
+
 body post publication :
 {     
     "publication":{
