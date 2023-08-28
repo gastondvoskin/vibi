@@ -10,6 +10,13 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#EC255A",
+        vibiGreen: "#40C351",
+        vibiWhite: "#FFFFFF",
+        myWhite: "#FFFFFF",
+        mygrey: "#F7F8FA",
+      },
+      fontFamily:{
+        normal: ["PPMori-Regular.otf"]
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
