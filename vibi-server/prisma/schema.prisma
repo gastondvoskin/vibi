@@ -13,14 +13,15 @@ enum User_type {
 }
 
 model User {
-    user_id  String    @id @default(uuid())
+    user_Id  String    @id @default(uuid())
     name     String
     email    String    @unique
     phone    String
     password String
     type     User_type
 
-    property Property[]
+    publication Publication[]
+    favorites Favorites[]
 }
 
 model Property {
@@ -31,11 +32,11 @@ model Property {
     urls_photos String[]
     urls_videos String[]
 
-    user             User   @relation(fields: [user_id_relation], references: [user_id])
-    user_id_relation String
-
+    publication Publication @relation(fields: [publication_Id_Reference], references: [publication_Id])
+    publication_Id_Reference String  @unique
     propertyInformation PropertyInformation?
-
+    propertyDetail PropertyDetail?
+    propertyAddress PropertyAddress? 
 }
 
 model PropertyInformation {
@@ -47,7 +48,65 @@ model PropertyInformation {
     baths Int
     halft_bath Int
 
-    property Property @relation(fields: [property_Id_reference], references: [property_Id])
-    property_Id_reference String  @unique
+    property Property @relation(fields: [property_Id_Reference], references: [property_Id])
+    property_Id_Reference String  @unique
 }
 
+model PropertyDetail{
+    propertyDetail_Id String @id @default(uuid())
+    luxury Boolean
+    terrace Boolean
+    lobby  Boolean
+    balcony Boolean
+    air_conditioning Boolean
+    gym Boolean
+    courtyard Boolean
+    barbecue Boolean
+    coworking Boolean
+    natural_gas Boolean
+
+    property Property @relation(fields: [property_Id_Reference],references: [property_Id])
+    property_Id_Reference String  @unique
+}
+
+model PropertyAddress {
+    propertyAddress_Id String @id @default(uuid())
+    street String
+    district String
+    city String
+    urbanization String
+    floor Int
+    property_type String
+
+    property Property @relation(fields: [property_Id_Reference], references: [property_Id])
+    property_Id_Reference String @unique
+}
+
+model Publication{
+     publication_Id String @id @default(uuid())
+     plan String
+     pro_photos Boolean
+     pro_video Boolean
+     pro_sign Boolean
+     pro_quoted Boolean
+     pro_analysis Boolean
+     pro_contracts Boolean
+     pro_tour Boolean
+     isActive Boolean
+     property Property?
+     user   User   @relation(fields: [user_Id_Reference], references: [user_Id])
+     user_Id_Reference String
+     favorites Favorites[]
+
+ }
+
+
+model Favorites{
+    user User @relation(fields: [user_Id_Reference],references: [user_Id])
+    user_Id_Reference String 
+    publication Publication @relation(fields: [publication_Id_Reference],references: [publication_Id])
+    publication_Id_Reference String 
+
+
+    @@id([user_Id_Reference,publication_Id_Reference])
+}
