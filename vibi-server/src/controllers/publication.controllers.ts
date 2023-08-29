@@ -91,6 +91,28 @@ export class PublicationController {
   
       res.status(200).json(newPublication);
     } catch (error) {
+      res.status(500).json({ error: error});
+    }
+  }
+  async getPublicationDetail(req:Request, res:Response){
+    try {
+      const {publicationId} = req.params
+      const publicationDetail = await prisma.publication.findUnique({
+        where:{publication_Id: publicationId},
+        include:{
+          property:{
+            include:{
+              propertyAddress:true,
+              propertyDetail:true,
+              propertyInformation:true
+            }
+          }
+        }
+      })
+
+      res.status(200).json(publicationDetail)
+      
+    } catch (error) {
       res.status(500).json({ error: 'Something went wrong.' });
     }
   }
