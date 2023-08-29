@@ -27,7 +27,8 @@ model User {
 model Property {
     property_Id String   @id @default(uuid())
     condition   String
-    final_price Int?
+    previous_price Int?
+    current_price Int
     description String
     urls_photos String[]
     urls_videos String[]
@@ -46,7 +47,8 @@ model PropertyInformation {
     m2_total Float
     rooms Int
     baths Int
-    halft_bath Int
+    half_bath Int?
+    garage Int?
 
     property Property? @relation(fields: [property_Id_Reference], references: [property_Id])
     property_Id_Reference String?  @unique

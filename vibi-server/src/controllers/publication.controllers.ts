@@ -4,7 +4,25 @@ import { Request, Response } from 'express';
 export class PublicationController {
   async getPublications(req: Request, res: Response) {
     try {
-      const publications = await prisma.publication.findMany({include:{property:{include:{propertyAddress:true,propertyDetail:true,propertyInformation:true}}}})
+      const publications = await prisma.publication.findMany({
+        select:{isActive:true,
+          property:{
+            select:{
+              previous_price:true,
+              current_price:true,
+              urls_photos:true,
+              propertyDetail:{
+                select: {
+                  luxury:true
+                }
+              },
+              propertyAddress:true,
+              propertyInformation: true
+              }
+              }
+            }},    
+        )
+
       res.status(200).json(publications);
     } catch (error) {
       res.status(500).json({ error: 'Something went wrong.' });
