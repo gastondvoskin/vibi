@@ -1,5 +1,5 @@
 /* import Image from "next/image"; */
-interface Card {
+interface CardInterface {
   property: any,
   propertyAddress: any,
   propertyInformation: any,
@@ -11,7 +11,7 @@ const Card = ({
   propertyAddress,
   propertyInformation,
   propertyDetail,
-}: Card) => {
+}: CardInterface) => {
   return (
     <div>
       {/* <Image src={property.urls_photos[0]} alt="Foto" width={10} height={10} /> */}{" "}
