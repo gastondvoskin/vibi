@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* import Image from "next/image"; */
 
 const Card = ({
   property,
@@ -20,6 +20,7 @@ const Card = ({
       <h1>Habitaciones: {propertyInformation.rooms}</h1>
       <h1>Baños: {propertyInformation.baths}</h1>
       <h1>Garage: De dónde saco esta data?</h1> {/* parking? */}
+      <h1>Detalles: tiene lujos... {propertyDetail.luxury ? "Sí" : "No"}</h1>
     </div>
   );
 };
