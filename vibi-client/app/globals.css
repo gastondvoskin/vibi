@@ -6,4 +6,13 @@
 body {
   background-color: white; 
   color: black;
+  font-family: 'PPMori-Regular.otf';
 }
+
+@font-face {
+  font-family: 'PPMori-Regular.otf';
+  src: url('../fonts/PPMori-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

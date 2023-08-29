@@ -2,7 +2,7 @@ import BgContainer from "./commons/BgContainer";
 
 const Footer = () => {
   return (
-    <BgContainer height="20" bg="red-500">
+    <BgContainer height="h-[160px]" bg="bg-mygrey">
       <div className="">Footer skjdhfksdf</div>
     </BgContainer>
   );
