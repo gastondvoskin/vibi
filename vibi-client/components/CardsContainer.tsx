@@ -54,8 +54,9 @@ const hcPublications = [
 const CardsContainer = () => {
   return (
     <div>
-      {hcPublications.map((publ) => (
+      {hcPublications.map((publ, index) => (
         <Card 
+            key={index}
             property={publ.property} 
             propertyAddress={publ.propertyAddress}
             propertyInformation={publ.propertyInformation}
