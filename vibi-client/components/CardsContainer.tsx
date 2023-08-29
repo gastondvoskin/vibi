@@ -55,16 +55,16 @@ const CardsContainer = () => {
   return (
     <div>
       {hcPublications.map((publ, index) => (
-        <Card 
-            key={index}
-            property={publ.property} 
-            propertyAddress={publ.propertyAddress}
-            propertyInformation={publ.propertyInformation}
-            propertyDetail={publ.propertyDetail}
+        <Card
+          key={index}
+          property={publ.property}
+          propertyAddress={publ.propertyAddress}
+          propertyInformation={publ.propertyInformation}
+          propertyDetail={publ.propertyDetail}
         />
       ))}
     </div>
-  )
+  );
 };
 
 export default CardsContainer;
