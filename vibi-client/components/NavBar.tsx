@@ -4,12 +4,13 @@ import {RiWhatsappFill} from "react-icons/ri"
 import NavButton from "./commons/NavButton";
 import Image from "next/image";
 import ButtonVariants from "./commons/ButtonVariants";
+import NavBarProfile from "./NavBarProfile";
 
 export default function NavBar() {
 
   return (
     <>
-      <nav className="w-full flex">
+      <nav className="w-full flex shadow-sm">
         <section>
           <Image src={"/logo.png"} className="mx-20 my-8" width={96} height={32} alt="Logo ViBi"></Image>
         </section>
@@ -20,8 +21,9 @@ export default function NavBar() {
         <NavButton name="Financia" route="/financia" />
         <NavButton name="Nuestros servicios" route="/servicios" />
         </section> 
-        <section>
-          <ButtonVariants leftIcon={<RiWhatsappFill/>} border={true} rightIcon={<RiWhatsappFill/>} bgColor="vibiGreen" txColor="myWhite" text="Contáctanos"/>
+        <section className="m-auto flex space-x-4">
+          <NavBarProfile/>
+          <ButtonVariants leftIcon={<RiWhatsappFill/>} border={false} bgColor="bg-vibiGreen" txColor="text-vibiWhite" text="Contáctanos"/>
         </section>
       </nav>
     </>

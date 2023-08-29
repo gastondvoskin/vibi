@@ -6,7 +6,6 @@ interface Props {
 }
 const NavButton = ({ route, name }: Props) => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <Link className="mx-3" href={route}>
       <div className={pathname === route ? `border-b-[4px] border-primary duration-300` : "border-b-[4px] border-white duration-300"}>        
