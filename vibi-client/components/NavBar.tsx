@@ -21,7 +21,7 @@ export default function NavBar() {
         <NavButton name="Financia" route="/financia" />
         <NavButton name="Nuestros servicios" route="/servicios" />
         </section> 
-        <section className="m-auto flex space-x-4">
+        <section className="relative  m-auto flex space-x-4">
           <NavBarProfile/>
           <ButtonVariants leftIcon={<RiWhatsappFill/>} border={false} bgColor="bg-vibiGreen" txColor="text-vibiWhite" text="Contáctanos"/>
         </section>
