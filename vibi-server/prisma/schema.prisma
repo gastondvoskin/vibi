@@ -1,0 +1,111 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL") // uses connection pooling
+}
+
+enum User_type {
+    client
+    admin
+}
+
+model User {
+    user_Id  String    @id @default(uuid())
+    name     String
+    email    String    @unique
+    phone    String
+    password String
+    type     User_type
+
+     publication Publication[]
+     favorites Favorites[]
+}
+
+model Property {
+    property_Id String   @id @default(uuid())
+    condition   String
+    previous_price Int?
+    current_price Int
+    description String
+    urls_photos String[]
+    urls_videos String[]
+
+    publication Publication? @relation(fields: [publication_Id_Reference], references: [publication_Id])
+    publication_Id_Reference String?  @unique
+    propertyInformation PropertyInformation?
+    propertyDetail PropertyDetail?
+    propertyAddress PropertyAddress?
+}
+
+model PropertyInformation {
+    propertyInformation_Id String @id @default(uuid())
+    construction_year Int
+    m2_indoor Float
+    m2_total Float
+    rooms Int
+    baths Int
+    half_bath Int?
+    garage Int?
+
+    property Property? @relation(fields: [property_Id_Reference], references: [property_Id])
+    property_Id_Reference String?  @unique
+}
+
+model PropertyDetail{
+    propertyDetail_Id String @id @default(uuid())
+    luxury Boolean
+    terrace Boolean
+    lobby  Boolean
+    balcony Boolean
+    air_conditioning Boolean
+    gym Boolean
+    courtyard Boolean
+    barbecue Boolean
+    coworking Boolean
+    natural_gas Boolean
+
+    property Property? @relation(fields: [property_Id_Reference],references: [property_Id])
+    property_Id_Reference String?  @unique
+}
+
+model PropertyAddress {
+    propertyAddress_Id String @id @default(uuid())
+    street String
+    district String
+    city String
+    urbanization String
+    floor Int
+    property_type String
+
+    property Property? @relation(fields: [property_Id_Reference], references: [property_Id])
+    property_Id_Reference String? @unique
+}
+
+model Publication{
+    publication_Id String @id @default(uuid())
+    plan String
+    pro_photos Boolean
+    pro_video Boolean
+    pro_sign Boolean
+    pro_quoted Boolean
+    pro_analysis Boolean
+    pro_contracts Boolean
+    pro_tour Boolean
+    isActive Boolean @default(true)
+    property Property?
+    user   User?   @relation(fields: [user_Id_Reference], references: [user_Id])
+    user_Id_Reference String?
+    favorites Favorites[]
+ }
+
+
+ model Favorites{
+    user User @relation(fields: [user_Id_Reference],references: [user_Id])
+    user_Id_Reference String 
+    publication Publication @relation(fields: [publication_Id_Reference],references: [publication_Id])
+    publication_Id_Reference String 
+    @@id([user_Id_Reference,publication_Id_Reference])
+ }

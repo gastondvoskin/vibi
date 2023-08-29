@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "ES2020", // O la versión de ECMAScript que prefieras
+      "module": "commonjs",
+      "outDir": "./dist",
+      "strict": true,
+      "esModuleInterop": true,
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "baseUrl": "./src",
+      "paths": {
+        "@/*": ["*"] // Configura tus aliases para rutas, si los tienes
+      }
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+  }

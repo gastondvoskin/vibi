@@ -2,12 +2,24 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/commons/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#EC255A",
+        vibiGreen: "#40C351",
+        vibiWhite: "#FFFFFF",
+        vibiDarkGrey: "#5C6F94",
+        myWhite: "#FFFFFF",
+        mygrey: "#F7F8FA",
+      },
+      fontFamily:{
+        normal: ["PPMori-Regular.otf"]
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

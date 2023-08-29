@@ -1,0 +1,22 @@
+Views. 
+
+0. Login/ Sign. Para el MVP, sin login, cualquier usuario puede agregar un anuncio a la DB.   
+1. Home: Nav, slogan (texto grande, botón buscar ahora, botón Whatsapp), Cómo comprar, Por qué elegirnos compra, Déjalo en profesionales (agendar llamada, whatsapp), FAQ, Footer. 
+
+2. Compra: Nav, searchbar, filters, sort, cards, Whatsapp, Pagination, Footer. 
+3. Detail. Nav, subNav, Photos, botón Ver más fotos, botón Solicitar una visita, Whatsapp, Detalles, Recorrido, Descripción, Ubicación, Viviendas similares. Pop-up Solicita una visita. 
+4. Ver más fotos. 
+5. Vende. Nav, slogan venta (con dos botones: a. Anunciar, b. Cotizar) Cómo vender, Por qué elegirnos venta, Déjalo en profesionales, Footer
+
+6. Anunciar 0 (inicio). Nav, franja para completar domicilio, Cómo vender, Footer. 
+7. Anunciar 1 (Información). Nav cerrar, Línea de progreso, Whatsapp, Completar urbanización - tipo de vivienda - email - celular - nombre y apellido, botón Continuar. 
+8. Anunciar 2 (Detalles). Nav cerrar, Línea de progreso, Whatsapp, Completar estado nuevo - años - m2 construidos - m2 totales - dormitorios - baños - mediobaños - estacionamiento - otras características - Precio sugerido por m2 (data science) - Precio final - Descripción, botón Continuar. 
+9. Anunciar 3 (Multimedia). Nav cerrar, Línea de progreso, Subir fotos (Cloudinary), elegir foto principal, ordenar fotos, eliminar foto, Agregar URL video Youtube (opcional), botón agregar nuevo video, botón eliminar video, Agregar URL tour Youtube, checkbox "quiero más información", botón Submit (Publicar anuncio). 
+10. Cotizar 1 (Ubicación). Para el MVP, el botón "Cotiza tu casa gratis" enviará un mail y se omiten los pasos siguientes de Cotizar. 
+
+11. Cotizar 2 (Contacto). A futuro. 
+12. Cotizar 3 (Características primera parte). A futuro. 
+13. Cotizar 4 (Características segunda parte). A futuro. 
+14. Cotizar 5 (Detalles extra). Completar precio_expectativa, submit (Solicitar cotización). A futuro. 
+15. Cotizar 6 (Nos contactaremos). A futuro. 
+16. Dashboard de admin. Para el MVP, se puede eliminar un anuncio directamente desde la DB sin un Dashboard.  
