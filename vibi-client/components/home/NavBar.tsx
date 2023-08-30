@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import {RiWhatsappFill} from "react-icons/ri"
-import NavButton from "./commons/NavButton";
+import NavButton from "../commons/NavButton";
 import Image from "next/image";
-import ButtonVariants from "./commons/ButtonVariants";
-import NavBarProfile from "./NavBarProfile";
+import ButtonVariants from "../commons/ButtonVariants";
+import NavBarProfile from "./navbar/NavBarProfile";
+
 
 export default function NavBar() {
 

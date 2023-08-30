@@ -7,7 +7,7 @@ export class UserController {
       const users = await prisma.user.findMany();
       res.status(200).send(users);
     } catch (error) {
-      res.status(500).json({ error: "Something went wrong." });
+      res.status(500).json({ error });
     }
   }
 
@@ -19,7 +19,7 @@ export class UserController {
       })
       res.status(200).json(newUser);
     } catch (error) {
-      res.status(500).json({ error: "Something went wrong." });
+      res.status(500).json({ error });
     }
   }
 }
