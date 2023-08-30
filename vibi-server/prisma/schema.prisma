@@ -103,11 +103,9 @@ model Publication{
 
 
  model Favorites{
-     user User @relation(fields: [user_Id_Reference],references: [user_Id])
-     user_Id_Reference String 
-      publication Publication @relation(fields: [publication_Id_Reference],references: [publication_Id])
-      publication_Id_Reference String 
-
-
-     @@id([user_Id_Reference,publication_Id_Reference])
+    user User @relation(fields: [user_Id_Reference],references: [user_Id])
+    user_Id_Reference String 
+    publication Publication @relation(fields: [publication_Id_Reference],references: [publication_Id])
+    publication_Id_Reference String 
+    @@id([user_Id_Reference,publication_Id_Reference])
  }

@@ -1,7 +1,4 @@
-import Card from "./Card";
-
-const hcPublications = [
-  {
+const hcPublication = {
     publication: {
       plan: "premium",
       pro_photos: true,
@@ -17,7 +14,9 @@ const hcPublications = [
       condition: "usado",
       final_price: 240000,
       description: "dsf f jasfg ag  asgadsf",
-      urls_photos: ["url"],
+      urls_photos: [
+        "https://www.thehousedesigners.com/images/uploads/SiteImage-Landing-modern-house-plans-1.webp",
+      ],
       urls_videos: ["dsfjgfdgfdsg das gsfdg dasf "],
     },
     propertyAddress: {
@@ -48,23 +47,10 @@ const hcPublications = [
       coworking: false,
       natural_gas: false,
     },
-  },
+  };
+
+const hcPublications = [
+    hcPublication, hcPublication, hcPublication, hcPublication, hcPublication, hcPublication
 ];
 
-const CardsContainer = () => {
-  return (
-    <div>
-      {hcPublications.map((publ, index) => (
-        <Card 
-            key={index}
-            property={publ.property} 
-            propertyAddress={publ.propertyAddress}
-            propertyInformation={publ.propertyInformation}
-            propertyDetail={publ.propertyDetail}
-        />
-      ))}
-    </div>
-  )
-};
-
-export default CardsContainer;
+export default hcPublications;

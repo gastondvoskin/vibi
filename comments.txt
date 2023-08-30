@@ -24,7 +24,7 @@ Como usuario quiero comprar una casa porque me quiero independizar de mis padres
 Como usuario quiero comprar una casa porque y no tengo el capital suficiente. 
 
 body post publication :
-{     
+{
     "publication":{
         "plan": "premium",
         "pro_photos": true,
@@ -38,9 +38,10 @@ body post publication :
     },
     "property":{
         "condition":"usado",
-        "final_price":2000,
+        "previous_price":2350,
+        "current_price":2000,
         "description":"dsf f jasfg ag  asgadsf",
-        "urls_photos":["sdafijsd a"],
+        "urls_photos":["https://exoffender.org/wp-content/uploads/2018/01/house-icon.png",  "https://www.clipartmax.com/png/middle/26-262064_green-house-icon-png.png"],
         "urls_videos":["dsfjgfdgfdsg das gsfdg dasf "]
     },
     "propertyAddress":{
@@ -57,7 +58,8 @@ body post publication :
         "m2_total":12.54,
         "rooms":23,
         "baths" :12,
-        "halft_bath":0
+        "half_bath":0
+        "garage":1
     },
     "propertyDetail":{
         "luxury":true,
