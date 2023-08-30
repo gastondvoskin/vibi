@@ -1,4 +1,4 @@
-/* import Image from "next/image"; */
+import Image from "next/image";
 interface CardInterface {
   property: any,
   propertyAddress: any,
@@ -12,11 +12,11 @@ const Card = ({
   propertyInformation,
   propertyDetail,
 }: CardInterface) => {
+
   return (
-    <div>
-      {/* <Image src={property.urls_photos[0]} alt="Foto" width={10} height={10} /> */}{" "}
+    <div className="m-4 w-80 h-96 border-solid border-2 border-vibiDarkBlue rounded-lg">
+      <Image src={property.urls_photos[0]} alt="Foto" width={363} height={205} className="rounded-t-md" />
       {/* a futuro un slide, llega un array de urls */}
-      <h1>IMAGEN</h1>
       {/* Tipo de propiedad */}
       <h1>{propertyAddress.property_type}</h1>
       <h1>Precio: {property.final_price}</h1>
@@ -25,7 +25,7 @@ const Card = ({
       <h1>m2: {propertyInformation.m2_indoor}</h1> {/* o m2_total? */}
       <h1>Habitaciones: {propertyInformation.rooms}</h1>
       <h1>Baños: {propertyInformation.baths}</h1>
-      <h1>Garage: De dónde saco esta data?</h1> {/* parking? */}
+      {/* <h1>Garage: De dónde saco esta data?</h1> */} {/* parking? */}
       <h1>Detalles: tiene lujos... {propertyDetail.luxury ? "Sí" : "No"}</h1>
     </div>
   );
