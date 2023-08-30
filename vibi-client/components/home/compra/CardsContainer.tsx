@@ -1,5 +1,5 @@
 import Card from "./Card";
-import hcPublications from "../hcResources/hcPublications";
+import hcPublications from "../../../hcResources/hcPublications";
 
 const CardsContainer = () => {
   return (
