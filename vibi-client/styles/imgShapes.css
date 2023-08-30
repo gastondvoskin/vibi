@@ -1,0 +1,6 @@
+.clip-path {
+    -webkit-clip-path: polygon(50% 0, 100% 38%, 100% 100%, 0 100%, 0% 38%);
+    clip-path: polygon(50% 0, 100% 38%, 100% 100%, 0 100%, 0% 38%);
+    border-radius: 25px;
+  }
+  

@@ -17,6 +17,7 @@ const config: Config = {
         vibiDarkBlue: "#102C57",
         myWhite: "#FFFFFF",
         mygrey: "#F7F8FA",
+        btngrey:"#acb7c6",
       },
       fontFamily:{
         normal: ["PPMori-Regular.otf"]
