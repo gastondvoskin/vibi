@@ -1,6 +1,5 @@
 import { HiOutlineShieldCheck } from "react-icons/hi";
 import ButtonVariants from "../../commons/ButtonVariants";
-import Image from "next/image";
 import "../../../styles/imgShapes.css"
 import { SubText, SubTitle, Text, Title } from "./commons/LandingTexts";
 
@@ -38,7 +37,7 @@ export default function Sells() {
             </section>
           </section>
           <section className="w-6/12 h-80 flex justify-center">
-            <Image src={"/sells/img-sells.jpg"} alt="logoVenta" width={100} height={100} className="w-[95%] h-full  clip-path object-cover"/>
+          
           </section>
         </section>
       </div>

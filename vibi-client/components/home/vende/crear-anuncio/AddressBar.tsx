@@ -1,4 +1,4 @@
-import ButtonVariants from "../../commons/ButtonVariants";
+import ButtonVariants from "../../../commons/ButtonVariants";
 import InputAddress from "./InputAddress";
 import SelectAddress from "./SelectAddress";
 
