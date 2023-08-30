@@ -1,4 +1,3 @@
-import { authMiddleware } from '@/auth/authMiddleware';
 import { UserController } from '@/controllers/user.controllers';
 import { Router } from 'express';
 

@@ -5,7 +5,9 @@ export class PublicationController {
   async getPublications(req: Request, res: Response) {
     try {
       const publications = await prisma.publication.findMany({
-        select:{isActive:true,
+        select:{
+          isActive:true,
+          publication_Id:true,
           property:{
             select:{
               previous_price:true,
