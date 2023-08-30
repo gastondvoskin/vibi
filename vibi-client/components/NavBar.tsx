@@ -15,7 +15,7 @@ export default function NavBar() {
           <Image src={"/logo.png"} className="mx-20 my-8" width={96} height={32} alt="Logo ViBi"></Image>
         </section>
         <section className="m-auto text-base flex">
-        <NavButton name="¿Cómo comprar?" route="/home" />
+        <NavButton name="¿Cómo comprar?" route="/" />
         <NavButton name="Comprar" route="/compra" />
         <NavButton name="Vende" route="/vende" />
         <NavButton name="Financia" route="/financia" />
