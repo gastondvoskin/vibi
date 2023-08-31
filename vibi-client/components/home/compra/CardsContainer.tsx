@@ -10,7 +10,6 @@ const CardsContainer = () => {
           property={publ.property}
           propertyAddress={publ.propertyAddress}
           propertyInformation={publ.propertyInformation}
-          propertyDetail={publ.propertyDetail}
         />
       ))}
     </div>
