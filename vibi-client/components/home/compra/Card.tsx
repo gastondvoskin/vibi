@@ -1,6 +1,7 @@
 'use client'; 
 import Image from "next/image";
 import Link from "next/link";
+import IconsContainer from "./IconsContainer";
 
 interface CardInterface {
   property: any,
@@ -16,24 +17,24 @@ const Card = ({
   propertyDetail,
 }: CardInterface) => {
 
-  const viewDetail = () => {
-
-  };
-
   return (
     <Link href="/compra/detalle">
-      <div onClick={viewDetail} className="m-4 w-80 h-96 border-solid border-2 border-vibiDarkBlue rounded-lg">
+      <div className="m-4 w-80 h-80 border-solid border-2 border-vibiGrayLightTwo hover:border-vibiDarkBlue rounded-lg text-vibiGraySmoke text-xs" >
         <Image src={property.urls_photos[0]} alt="Foto" width={363} height={205} className="rounded-t-md" />
-        {/* a futuro un slide, llega un array de urls */}
-        <h1>{propertyAddress.property_type}</h1>
-        <h1>Precio: {property.final_price}</h1>
-        <h1>Precio tachado: {property.final_price}</h1>
-        <p> Domicilio: {propertyAddress.street}, {propertyAddress.district}, {propertyAddress.city}</p>
-        <h1>m2: {propertyInformation.m2_indoor}</h1> {/* o m2_total? */}
-        <h1>Habitaciones: {propertyInformation.rooms}</h1>
-        <h1>Baños: {propertyInformation.baths}</h1>
-        {/* <h1>Garage: De dónde saco esta data?</h1> */} {/* parking? */}
-        <h1>Detalles: tiene lujos... {propertyDetail.luxury ? "Sí" : "No"}</h1>
+        <div className="p-4">
+          <h1 className="text-xs">{propertyAddress.property_type}</h1>
+          <div>
+            <span className="text-primary text-xl mr-2">$ {property.final_price}</span>
+            {property.final_price === property.previous_price ? "" : <span>{property.previous_price}</span>}
+          </div>
+
+          <p className="my-2">{propertyAddress.street}, {propertyAddress.district}, {propertyAddress.city}</p>
+          <div>
+            <IconsContainer propertyInformation={propertyInformation}/>
+            
+
+          </div>
+        </div>
       </div>
     
     </Link>

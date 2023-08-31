@@ -12,7 +12,8 @@ const hcPublication = {
     },
     property: {
       condition: "usado",
-      final_price: 240000,
+      final_price: 210000,
+      previous_price: 240000,
       description: "dsf f jasfg ag  asgadsf",
       urls_photos: [
         "https://www.thehousedesigners.com/images/uploads/SiteImage-Landing-modern-house-plans-1.webp",
@@ -29,11 +30,12 @@ const hcPublication = {
     },
     propertyInformation: {
       construction_year: 1990,
-      m2_indoor: 12.5,
-      m2_total: 12.54,
-      rooms: 23,
-      baths: 12,
+      m2_indoor: 550.5,
+      m2_total: 400.5,
+      rooms: 6,
+      baths: 2,
       halft_bath: 0,
+      parking: 0,
     },
     propertyDetail: {
       luxury: true,
