@@ -9,8 +9,9 @@ interface Option{
 }
 interface Props {
     options:Option[];
+    noDetails?:boolean
 }
-export default function Section2map({options}:Props) {
+export default function Section2map({options,noDetails}:Props) {
   return (
     <div className="flex">
       {options.map((option, index) => (
@@ -20,7 +21,7 @@ export default function Section2map({options}:Props) {
           </div>
           <div className="pt-8">
           <SubTitle2 text={option.subtitle} />
-          <Text text={option.text} />
+          {!noDetails ? <Text text={option.text} /> : ""}
           </div>
         </div>
       ))}
