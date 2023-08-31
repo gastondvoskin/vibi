@@ -2,6 +2,7 @@ import { HiOutlineShieldCheck } from "react-icons/hi";
 import ButtonVariants from "../../commons/ButtonVariants";
 import "../../../styles/imgShapes.css"
 import { SubText, SubTitle, Text, Title } from "./commons/LandingTexts";
+import Image from "next/image";
 
 
 export default function Sells() {
@@ -26,6 +27,7 @@ export default function Sells() {
               />
               <ButtonVariants
                 border={true}
+                brColor="border-vibiGreyWhite"
                 bgColor="bg-white"
                 txColor="text-vibiDarkBlue"
                 text="Cotiza tu casa gratis"
@@ -37,7 +39,7 @@ export default function Sells() {
             </section>
           </section>
           <section className="w-6/12 h-80 flex justify-center">
-          
+          <Image src={"/sells/img-sells-3.png"} alt="logoVenta" width={330} height={378} className=" h-full object-cover"/>
           </section>
         </section>
       </div>
