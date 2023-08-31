@@ -1,7 +1,5 @@
 import Card from "./Card";
-import hcPublications from "../../../hcResources/hcPublications";
-import axios from "axios";
-import { useEffect, useState } from "react";
+// import hcPublications from "../../../hcResources/hcPublications";
 import { useSelector } from "react-redux";
 
 const CardsContainer = () => {
