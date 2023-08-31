@@ -1,11 +1,11 @@
 "use client"
-import AddressBar from "../../../../components/home/vende/crear-anuncio/AddressBar";
+import LandingCrearAnuncio from "../../../../components/home/vende/crear-anuncio/LandingCrearAnuncio";
 
 export default function CrearAnuncio () {
     return (
   
       <main className="flex justify-center">
-        <AddressBar/>
+        <LandingCrearAnuncio/>
       </main>
   
   
