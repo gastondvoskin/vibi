@@ -1,10 +1,20 @@
 import Card from "./Card";
-import hcPublications from "../../../hcResources/hcPublications";
+// import hcPublications from "../../../hcResources/hcPublications";
+import { useSelector } from "react-redux";
 
 const CardsContainer = () => {
+
+  const currentPublications = useSelector((state: any) => state.publications);
+
+  /* const [publications, setPublications] = useState([]) 
+  useEffect(() => {
+
+  },[]) */
+
   return (
     <div className="flex flex-wrap">
-      {hcPublications.map((publ, index) => (
+      {/* {hcPublications.map((publ, index) => ( */}
+      {currentPublications?.map((publ:any, index: number) => (
         <Card
           key={index}
           property={publ.property}

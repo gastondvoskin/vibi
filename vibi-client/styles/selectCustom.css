@@ -1,0 +1,12 @@
+.select-custom {
+    position: relative;
+}
+
+.select-custom select {
+    display: none; /*hide original SELECT element: */
+  }
+
+  .select-selected {
+    background-color: DodgerBlue;
+  }
+  

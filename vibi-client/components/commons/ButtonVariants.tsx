@@ -7,12 +7,13 @@ interface Props {
     border: boolean,
     bgColor: string,
     brColor?: string,
-    txColor: string
+    txColor: string,
+    width?: string
 }
-export default function ButtonVariants({text, leftIcon, rightIcon, bgColor, txColor, border, brColor}:Props){
+export default function ButtonVariants({text, leftIcon, rightIcon, bgColor, txColor, border, brColor, width}:Props){
     return(
         <>
-        <button className={ border ? `border ${brColor} ${bgColor}  rounded-[4px] px-6 py-3 flex` : ` ${bgColor}  rounded-[4px] px-6 py-3 flex`}>
+        <button className={ border ? `border ${brColor} ${bgColor}  rounded-[4px] px-6 py-3 flex ${width}` : ` ${bgColor}  rounded-[4px] px-6 py-3 flex ${width}`}>
             <section className={`${txColor} ` + "text-[24px]"}>
                 {leftIcon}
             </section>
