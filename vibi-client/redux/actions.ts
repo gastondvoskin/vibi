@@ -2,7 +2,7 @@ import { GET_PUBLICATIONS } from "./actions-types";
 import axios from "axios";
 
 export const getPublicationsAction = () => {
-  const API_URL = "/publication";
+  const API_URL = "http://localhost:3001/api/publication/";
   return async (dispatch: any) => {
     try {
       const response = await axios.get(API_URL);
