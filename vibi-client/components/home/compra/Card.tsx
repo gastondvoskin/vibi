@@ -7,14 +7,12 @@ interface CardInterface {
   property: any,
   propertyAddress: any,
   propertyInformation: any,
-  propertyDetail: any,
 }
 
 const Card = ({
   property,
   propertyAddress,
   propertyInformation,
-  propertyDetail,
 }: CardInterface) => {
 
   return (
