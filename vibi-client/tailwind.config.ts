@@ -22,7 +22,7 @@ const config: Config = {
         vibiGrayLightTwo: "#E6E9EF",
         myWhite: "#FFFFFF",
         mygrey: "#F7F8FA",
-        btngrey:"#acb7c6",
+        vibiOrange:"#E74646"
       },
       fontFamily:{
         normal: ["PPMori-Regular.otf"]

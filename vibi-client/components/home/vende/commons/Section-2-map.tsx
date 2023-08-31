@@ -14,7 +14,7 @@ interface Props {
 export default function Section2map({options,noDetails}:Props) {
   return (
     <div className="flex">
-      {options.map((option, index) => (
+      {options?.map((option, index) => (
         <div key={index} className="flex flex-col items-center w-72 text-center mx-7">
           <div className="w-64 h-64 bg-gray-50 rounded-[100px] flex items-center justify-center">
           <Image src={option.image} alt={`Option ${index + 1}`} className="w-44 h-36 " width={10} height={10} />
