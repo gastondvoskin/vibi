@@ -1,40 +1,17 @@
-import { GET_PUBLICATIONS } from "./actions-types";
+// reducers/counter.ts
+import { INCREMENT, DECREMENT, CounterActionTypes } from "./actions-types"
 
-const initialState = {
-  publications: [],
-};
+const initialState = { value: 0 };
 
-
-
-const rootReducer = (state = initialState, action: any) => {
+const counterReducer = (state = initialState, action: CounterActionTypes) => {
   switch (action.type) {
-    case GET_PUBLICATIONS: {
-      const publications = action.payload;
-      return {...state, publications};
-    }
-
+    case INCREMENT:
+      return { ...state, value: state.value + 1 };
+    case DECREMENT:
+      return { ...state, value: state.value - 1 };
     default:
-      return {
-        ...state,
-      };
+      return state;
   }
 };
 
-export default rootReducer;
-
-
-/* addToCart: (state, action: PayloadAction<Product>) => {
-    const newState = {
-      ...state,
-
-      cartItems: [...state.cartItems, action.payload]
-    }; */
-
-    /* export interface Product {
-    id: string;
-    name: string;
-    image: string;
-    price: number;
-  } */
-
-/* interface PublicationInterface {} */
+export default counterReducer;
