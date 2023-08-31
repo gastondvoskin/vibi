@@ -3,7 +3,6 @@ interface Props{
     text:string,
     color?:string,
     showColor?:boolean
-    color?:string
 }
 export const Text: React.FC<Props> = ({ text }) => {
     return <p className="text-vibiDarkBlue text-lg font-normal pt-3.5">{text}</p>;
@@ -22,6 +21,6 @@ export const Title: React.FC<Props> = ({ text, color }) => {
   export const SubText: React.FC<Props> = ({text})=>{
     return <p className="text-xs text-vibiDarkBlue">{text}</p>
   }
-  export const CardText: React.FC<Props> = ({ text }) => {
-    return <p className="text-vibiDarkBlue text-xl font-medium">{text}</p>;
+  export const CardText: React.FC<Props> = ({ text , color}) => {
+    return <p className="text-vibiDarkBlue text-xl font-medium "  >{text}</p>;
   };
