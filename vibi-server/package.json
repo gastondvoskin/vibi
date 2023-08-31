@@ -8,6 +8,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "tsnd --respawn --rs --cls -r tsconfig-paths/register src/main.ts",
 		"build": "tsc && tsc-alias",
+		"h-reset" : "npx prisma migrate reset",
 		"build-start": "npx prisma generate && npx prisma db push && npm run build && npm start",
 		"start": "node dist/src/main.js"
 	},
