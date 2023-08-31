@@ -1,4 +1,3 @@
-import { GET_PUBLICATIONS } from "./actions-types";
 import axios from "axios";
 
 export const getPublicationsAction = () => {
@@ -8,7 +7,7 @@ export const getPublicationsAction = () => {
       const response = await axios.get(API_URL);
       const publications = response.data;
       dispatch({
-        type: GET_PUBLICATIONS,
+        type: "GET_PUBLICATIONS",
         payload: publications,
       });
     } catch (error: any) {
