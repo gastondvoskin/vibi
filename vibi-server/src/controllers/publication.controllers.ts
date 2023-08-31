@@ -169,6 +169,45 @@ export class PublicationController {
       // Manejo del error aquí
     }
   }
+
+  async getPropertiesByCity(req: Request, res: Response) {
+    try {
+      const { city } = req.query;
+  
+      if (!city) {
+        return res.status(400).json({ error: "City parameter is missing" });
+      }
+  
+      // Realizar la consulta para obtener propiedades por ciudad
+      const propertiesByCity = await prisma.publication.findMany({
+        where: {
+          isActive: true,
+          property: {
+            propertyAddress: {
+              city:{equals:city as string}
+            },
+          },
+        },
+        include: {
+          property:{
+            include:{
+              propertyAddress:true,
+              propertyDetail:true,
+              propertyInformation:true,
+            }
+          },
+        },
+      });
+      if (!propertiesByCity.length) {
+        res.status(200).send("There are no results");
+      }
+      res.status(200).json(propertiesByCity);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ error });
+    }
+  }
+  
   
   
 }
