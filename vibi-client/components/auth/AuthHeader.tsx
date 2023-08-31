@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const AuthHeader = () => {
     return (
-        <div className="flex flex-row justify-around h-24 items-center">
+        <div className="flex flex-row justify-center gap-80 h-24 items-center bg-[#F7F8FA]">
             <div >
                 <Link href={'/'}>
                     <Image src={'/logo.png'} alt="Logo" width={95} height={32} />
