@@ -4,8 +4,8 @@ interface Props{
     color?:string,
     showColor?:boolean
 }
-export const Text: React.FC<Props> = ({ text }) => {
-    return <p className="text-vibiDarkBlue text-lg font-normal pt-3.5">{text}</p>;
+export const Text: React.FC<Props> = ({ text,color }) => {
+    return <p className={"text-vibiDarkBlue text-lg font-normal pt-3.5 "+color}>{text}</p>;
   };
 
 export const Title: React.FC<Props> = ({ text, color }) => {
