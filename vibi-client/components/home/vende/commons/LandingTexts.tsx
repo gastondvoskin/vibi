@@ -21,6 +21,6 @@ export const Title: React.FC<Props> = ({ text, color }) => {
   export const SubText: React.FC<Props> = ({text})=>{
     return <p className="text-xs text-vibiDarkBlue">{text}</p>
   }
-  export const CardText: React.FC<Props> = ({ text , color}) => {
+  export const CardText: React.FC<Props> = ({ text }) => {
     return <p className="text-vibiDarkBlue text-xl font-medium "  >{text}</p>;
   };
