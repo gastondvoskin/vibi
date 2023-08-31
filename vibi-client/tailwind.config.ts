@@ -17,6 +17,9 @@ const config: Config = {
         vibiDarkBlue: "#102C57",
         vibiGreyWhite: "#ACB7C6",
         vibiGreyInput: "#C1CBDA",
+        vibiGraySmoke: "#4C4C6D",
+        vibiGrayLight: "#AAB6C5",
+        vibiGrayLightTwo: "#E6E9EF",
         myWhite: "#FFFFFF",
         mygrey: "#F7F8FA",
         vibiOrange:"#E74646"

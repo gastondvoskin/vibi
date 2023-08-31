@@ -1,0 +1,10 @@
+<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="heroicons-outline/video-camera" clip-path="url(#clip0_487_585)">
+<path id="Vector" d="M11.4688 7L14.6152 3.85355C14.9302 3.53857 15.4688 3.76165 15.4688 4.20711V11.7929C15.4688 12.2383 14.9302 12.4614 14.6152 12.1464L11.4688 9M3.96875 12.5H9.96875C10.7972 12.5 11.4688 11.8284 11.4688 11V5C11.4688 4.17157 10.7972 3.5 9.96875 3.5H3.96875C3.14032 3.5 2.46875 4.17157 2.46875 5V11C2.46875 11.8284 3.14032 12.5 3.96875 12.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_487_585">
+<rect width="16" height="16" fill="white" transform="translate(0.96875)"/>
+</clipPath>
+</defs>
+</svg>
