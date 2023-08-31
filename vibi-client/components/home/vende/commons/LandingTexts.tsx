@@ -2,6 +2,7 @@ import React from "react";
 interface Props{
     text:string,
     showColor?:boolean
+    color?:string
 }
 export const Text: React.FC<Props> = ({ text }) => {
     return <p className="text-vibiDarkBlue text-lg font-normal pt-3.5">{text}</p>;
