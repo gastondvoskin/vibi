@@ -23,10 +23,24 @@ User stories
 Como usuario quiero comprar una casa porque me quiero independizar de mis padres. 
 Como usuario quiero comprar una casa porque y no tengo el capital suficiente. 
 
-body post publication :
+
+npx prisma migrate reset
+
+body user
+
+{
+    "name":"juan",
+    "email":"alejo@gmial",
+    "phone":"3872312343",
+    "password":"hola",
+    "type":"admin"
+}
+
+body publication 
+
 {
     "publication":{
-        "plan": "premium",
+        "plan": "completo",
         "pro_photos": true,
         "pro_video": true,
         "pro_sign" : false,
@@ -38,39 +52,38 @@ body post publication :
     },
     "property":{
         "condition":"usado",
-        "previous_price":2350,
-        "current_price":2000,
+        "previous_price":250000,
+        "current_price":210000,
         "description":"dsf f jasfg ag  asgadsf",
-        "urls_photos":["https://exoffender.org/wp-content/uploads/2018/01/house-icon.png",  "https://www.clipartmax.com/png/middle/26-262064_green-house-icon-png.png"],
+        "urls_photos":["https://www.thehousedesigners.com/images/uploads/SiteImage-Landing-modern-house-plans-1.webp"],
         "urls_videos":["dsfjgfdgfdsg das gsfdg dasf "]
     },
     "propertyAddress":{
-        "street":"String",
-        "district":"String",
-        "city":"String",
-        "urbanization":"String",
+        "street":"Av. Libertad 123",
+        "district":"Rimac",
+        "city":"Lima",
+        "urbanization":"ciudad",
         "floor":2,
-        "property_type":"String"
+        "property_type":"Departamento"
     },
-    "propertyInformation":{
-        "construction_year":1990,
-        "m2_indoor":12.5,
-        "m2_total":12.54,
-        "rooms":23,
-        "baths" :12,
+    "propertyInformation": {
+        "construction_year": 1990,
+        "m2_indoor": 550.5,
+        "m2_total": 400.5,
+        "rooms": 6,
+        "baths": 2,
         "half_bath":0
-        "garage":1
     },
-    "propertyDetail":{
-        "luxury":true,
-        "terrace":false,
-        "lobby":true,
-        "balcony":false,
-        "air_conditioning":true,
-        "gym":true,
-        "courtyard":true,
-        "barbecue":false,
-        "coworking":false,
-        "natural_gas":false
+    "propertyDetail": {
+        "luxury": true,
+        "terrace": false,
+        "lobby": true,
+        "balcony": false,
+        "air_conditioning": true,
+        "gym": true,
+        "courtyard": true,
+        "barbecue": false,
+        "coworking": false,
+        "natural_gas": false
     }
 }
