@@ -1,7 +1,5 @@
 import Card from "./Card";
-import hcPublications from "../../../hcResources/hcPublications";
-import axios from "axios";
-import { useEffect, useState } from "react";
+// import hcPublications from "../../../hcResources/hcPublications";
 import { useSelector } from "react-redux";
 
 const CardsContainer = () => {
@@ -16,7 +14,7 @@ const CardsContainer = () => {
   return (
     <div className="flex flex-wrap">
       {/* {hcPublications.map((publ, index) => ( */}
-      {currentPublications.map((publ:any, index: number) => (
+      {currentPublications?.map((publ:any, index: number) => (
         <Card
           key={index}
           property={publ.property}

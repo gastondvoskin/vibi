@@ -1,17 +1,15 @@
 // store.ts
-import { createStore, combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension'; // Opcional: para habilitar la extensión Redux DevTools
-import counterReducer from './reducer'; // Reemplaza con la ubicación de tus reducers
 
-const rootReducer = combineReducers({
-  counter: counterReducer,
-  // Agrega más reducers aquí si es necesario
-});
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import rootReducer from './reducer'
 
-const store = createStore(
-  rootReducer,
-  composeWithDevTools() // Opcional: para habilitar la extensión Redux DevTools
-);
 
-export type RootState = ReturnType<typeof rootReducer>;
+// Infer the RootState and AppDispatch types from the store itself
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
+
 export default store;
+
+

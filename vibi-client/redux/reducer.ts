@@ -1,17 +1,23 @@
-// reducers/counter.ts
-import { INCREMENT, DECREMENT, CounterActionTypes } from "./actions-types"
 
-const initialState = { value: 0 };
+import { GET_PUBLICATIONS } from "./actions-types";
 
-const counterReducer = (state = initialState, action: CounterActionTypes) => {
+const initialState = {
+  publications: [],
+};
+
+
+const rootReducer = (state = initialState, action: any) => {
   switch (action.type) {
-    case INCREMENT:
-      return { ...state, value: state.value + 1 };
-    case DECREMENT:
-      return { ...state, value: state.value - 1 };
+    case GET_PUBLICATIONS: {
+      const publications = action.payload;
+      return {...state, publications};
+    }
+
     default:
-      return state;
+      return {
+        ...state,
+      };
   }
 };
 
-export default counterReducer;
+export default rootReducer;
