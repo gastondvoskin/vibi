@@ -12,6 +12,13 @@ enum User_type {
     admin
 }
 
+enum Plan_type {
+    basico
+    completo
+    destacado
+
+}
+
 model User {
     user_Id  String    @id @default(uuid())
     name     String
@@ -86,7 +93,7 @@ model PropertyAddress {
 
 model Publication{
     publication_Id String @id @default(uuid())
-    plan String
+    plan Plan_type
     pro_photos Boolean
     pro_video Boolean
     pro_sign Boolean

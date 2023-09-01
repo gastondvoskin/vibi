@@ -121,11 +121,11 @@ export class PublicationController {
 
   async getFilteredProperties(req: Request, res: Response) {
     try {
-      const { propertyType, minRooms, maxRooms, minPrice, maxPrice } = req.query;
+      const { propertyType, minRooms, maxRooms, minPrice, maxPrice,city } = req.query;
   
       // Construir condiciones para la consulta
       const conditions: any = {};
-  
+      
       if (propertyType) {
         conditions.propertyAddress = { property_type: propertyType };
       }
@@ -140,6 +140,10 @@ export class PublicationController {
         conditions.property = {};
         if (minPrice) conditions.property.current_price = { gte: parseInt(minPrice as string) };
         if (maxPrice) conditions.property.current_price = { ...conditions.property.current_price, lte: parseInt(maxPrice as string) };
+      }
+
+      if (city) {
+        conditions.propertyAddress = {...conditions.propertyAddress ,city: { equals: city as string} };
       }
   
       // Realizar la consulta con las condiciones
@@ -162,52 +166,16 @@ export class PublicationController {
           },
         },
       });
-  
-      res.status(200).json(filteredProperties);
-    } catch (error) {
-      console.log(error);
-      // Manejo del error aquí
-    }
-  }
-
-  async getPropertiesByCity(req: Request, res: Response) {
-    try {
-      const { city } = req.query;
-  
-      if (!city) {
-        return res.status(400).json({ error: "City parameter is missing" });
-      }
-  
-      // Realizar la consulta para obtener propiedades por ciudad
-      const propertiesByCity = await prisma.publication.findMany({
-        where: {
-          isActive: true,
-          property: {
-            propertyAddress: {
-              city:{equals:city as string}
-            },
-          },
-        },
-        include: {
-          property:{
-            include:{
-              propertyAddress:true,
-              propertyDetail:true,
-              propertyInformation:true,
-            }
-          },
-        },
-      });
-      if (!propertiesByCity.length) {
+      
+      if (!filteredProperties.length){
         res.status(200).send("There are no results");
       }
-      res.status(200).json(propertiesByCity);
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ error });
+
+      res.status(200).json(filteredProperties);
+
+    } catch (error : any) {
+      console.log(error.message);
+      res.status(400).json({Error:error})
     }
   }
-  
-  
-  
 }
