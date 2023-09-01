@@ -93,6 +93,7 @@ export class PublicationController {
   
       res.status(200).json(newPublication);
     } catch (error) {
+      console.log(error)
       res.status(500).json({ error: error});
     }
   }
@@ -118,5 +119,64 @@ export class PublicationController {
       res.status(500).json({ error: 'Something went wrong.' });
     }
   }
+
+  async getFilteredProperties(req: Request, res: Response) {
+    try {
+      const { propertyType, minRooms, maxRooms, minPrice, maxPrice,city } = req.query;
   
+      // Construir condiciones para la consulta
+      const conditions: any = {};
+      
+      if (propertyType) {
+        conditions.propertyAddress = { property_type: propertyType };
+      }
+  
+      if (minRooms || maxRooms) {
+        conditions.propertyInformation = {};
+        if (minRooms) conditions.propertyInformation.rooms = { gte: parseInt(minRooms as string) };
+        if (maxRooms) conditions.propertyInformation.rooms = { ...conditions.propertyInformation.rooms, lte: parseInt(maxRooms as string) };
+      }
+  
+      if (minPrice || maxPrice) {
+        conditions.property = {};
+        if (minPrice) conditions.property.current_price = { gte: parseInt(minPrice as string) };
+        if (maxPrice) conditions.property.current_price = { ...conditions.property.current_price, lte: parseInt(maxPrice as string) };
+      }
+
+      if (city) {
+        conditions.propertyAddress = {...conditions.propertyAddress ,city: { equals: city as string ,mode: 'insensitive'} };
+      }
+  
+      // Realizar la consulta con las condiciones
+      const filteredProperties = await prisma.publication.findMany({
+        where: {
+          isActive: true,
+          property: {
+            ...(conditions.property || {}),
+            propertyAddress: { ...(conditions.propertyAddress || {}) },
+            propertyInformation: { ...(conditions.propertyInformation || {}) },
+          },
+        },
+        include: {
+          property:{
+            include:{
+              propertyAddress:true,
+              propertyDetail:true,
+              propertyInformation:true,
+            }
+          },
+        },
+      });
+      
+      if (!filteredProperties.length){
+        return res.status(200).send("There are no results");
+      }
+
+      res.status(200).json(filteredProperties);
+
+    } catch (error : any) {
+      console.log(error.message);
+      res.status(400).json({Error:error})
+    }
+  }
 }
