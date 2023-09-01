@@ -3,7 +3,7 @@
 import ButtonVariants from "../../commons/ButtonVariants";
 import { SubTitle2, Title } from "./commons/LandingTexts";
 import Section2map from "./commons/Section-2-map";
-import { section_2_vende } from "../../../utils/landingData";
+import { section_2_vende } from "../../../utils/landingData"; 
 
 export default function Section2() {
   return (
