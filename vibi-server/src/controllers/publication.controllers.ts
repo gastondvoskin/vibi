@@ -93,6 +93,7 @@ export class PublicationController {
   
       res.status(200).json(newPublication);
     } catch (error) {
+      console.log(error)
       res.status(500).json({ error: error});
     }
   }
@@ -143,7 +144,7 @@ export class PublicationController {
       }
 
       if (city) {
-        conditions.propertyAddress = {...conditions.propertyAddress ,city: { equals: city as string} };
+        conditions.propertyAddress = {...conditions.propertyAddress ,city: { equals: city as string ,mode: 'insensitive'} };
       }
   
       // Realizar la consulta con las condiciones
@@ -168,7 +169,7 @@ export class PublicationController {
       });
       
       if (!filteredProperties.length){
-        res.status(200).send("There are no results");
+        return res.status(200).send("There are no results");
       }
 
       res.status(200).json(filteredProperties);
