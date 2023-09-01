@@ -12,7 +12,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <Provider store={store}>
       <html lang="en">
-        <body className={"font-normal max-w-[1280px] m-auto text-[#102C57]"}>
+        <body className={"font-normal max-w-[1280px] flex flex-col justify-center m-auto text-[#102C57]"}>
           <NavBar />
           {children}
           <Footer />

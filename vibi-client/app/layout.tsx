@@ -16,7 +16,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={"font-normal max-w-screen m-auto text-[#102C57]"}>
+      <body className={"font-normal max-w-[1280px] flex flex-col justify-center m-auto text-[#102C57]"}>
         {children}
       </body>
     </html>
