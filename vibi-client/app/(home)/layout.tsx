@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Footer from "../../components/home/Footer";
 import NavBar from "../../components/home/NavBar";
 import { Provider } from "react-redux";
@@ -9,16 +9,15 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  
   return (
     <Provider store={store}>
-    <html lang="en">
-      <body className={"font-normal max-w-[1280px] m-auto text-[#102C57]"}>
-        <NavBar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+      <html lang="en">
+        <body className={"font-normal max-w-[1280px] m-auto text-[#102C57]"}>
+          <NavBar />
+          {children}
+          <Footer />
+        </body>
+      </html>
     </Provider>
   );
 }
