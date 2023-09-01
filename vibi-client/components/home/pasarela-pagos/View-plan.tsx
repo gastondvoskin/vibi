@@ -82,38 +82,38 @@ export default function ViewPlan() {
               </td>
             </tr>
             <tr>
-                <td></td>
+              <td></td>
+              <td>
                 <ButtonVariants
-          border={false}
-          bgColor="bg-primary"
-          txColor="text-vibiWhite"
-          text="Publicar"
-        />
+                  border={false}
+                  bgColor="bg-primary"
+                  txColor="text-vibiWhite"
+                  text="Publicar"
+                />
+              </td>
+              <td>
+                <ButtonVariants
+                  border={true}
+                  brColor="text-vibiDarkGrey"
+                  bgColor="bg-white"
+                  txColor="text-vibiDarkBlue"
+                  text="Publicar"
+                />
+              </td>
+
+              <td>
+                <ButtonVariants
+                  border={true}
+                  brColor="text-vibiDarkGrey"
+                  bgColor="bg-white"
+                  txColor="text-vibiDarkBlue"
+                  text="Publicar"
+                />
+              </td>
             </tr>
-            
-                <td></td>
-                <ButtonVariants
-          border={true}
-          brColor="text-vibiDarkGrey"
-          bgColor="bg-white"
-          txColor="text-vibiDarkBlue"
-          text="Publicar"
-        />
-            
-            
-                <td></td>
-                <ButtonVariants
-          border={true}
-          brColor="text-vibiDarkGrey"
-          bgColor="bg-white"
-          txColor="text-vibiDarkBlue"
-          text="Publicar"
-        />
-            
           </tbody>
         </table>
       </section>
-      
     </div>
   );
 }
