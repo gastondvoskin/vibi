@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#EC255A",
+        darkprimary:"#D42151",
         vibiGreen: "#40C351",
         vibiWhite: "#FFFFFF",
         vibiDarkGrey: "#5C6F94",

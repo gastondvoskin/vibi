@@ -1,11 +1,11 @@
 "use client";
 
-import ViewPlan from "../../../components/home/pasarela-pagos/View-plan";
+import ViewFeatured from "../../../components/home/pasarela-pagos/View-destacado";
 
-export default function Home() {
+export default function MarcePlayergrounds() {
   return (
     <main>
-      <ViewPlan />
+      <ViewFeatured/>
     </main>
   );
 }
