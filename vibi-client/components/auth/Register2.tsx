@@ -33,15 +33,15 @@ const Register2 = () => {
                             <InputRegister placeholder="Escribe tu nombre" onChange={handleOnChange} value={form.name} name='name' />
                         </div>
                         <div>
-                            <label className="text-xs text-vibiDarkBlue">Nombre</label>
+                            <label className="text-xs text-vibiDarkBlue">Email</label>
                             <InputRegister placeholder="Escribe tu correo" onChange={handleOnChange} value={form.email} name='email' />
                         </div>
                         <div>
-                            <label className="text-xs text-vibiDarkBlue">Nombre</label>
+                            <label className="text-xs text-vibiDarkBlue">Celular</label>
                             <InputRegister placeholder="9 dígitos" onChange={handleOnChange} value={form.phone} name='phone' />
                         </div>
                         <div>
-                            <label className="text-xs text-vibiDarkBlue">Nombre</label>
+                            <label className="text-xs text-vibiDarkBlue">Contraseña</label>
                             <InputRegister placeholder="Escribe tu correo" onChange={handleOnChange} value={form.password} name='password' />
                         </div>
                         <ButtonVariants text="Envia tus datos" bgColor="bg-vibiOrange" txColor="text-white" width="w-full" border brColor="border-slate-400" />
