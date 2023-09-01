@@ -49,7 +49,7 @@ const Register2 = () => {
                 </div>
             </div>
             <div className="flex flex-row justify-center mt-6">
-                <p >¿Ya tienes una cuenta? <a href="#" className="font-semibold text-base">Inicia sesión</a></p>
+                <p >¿Ya tienes una cuenta? <a href="#" className="font-semibold text-base underline decoration-red-500">Inicia sesión</a></p>
             </div>
         </div >
     )

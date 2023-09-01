@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const AuthFooter = () => {
     return (
-        <div className="flex flex-row justify-around h-32 items-center fixed bottom-0 w-full bg-[#F7F8FA]">
+        <div className="flex flex-row justify-around h-28 items-center fixed bottom-0 w-full bg-[#F7F8FA]">
             <div >
                 <Link href={'/'}>
                     <Image src={'/logo.png'} alt="Logo" width={95} height={32} />
