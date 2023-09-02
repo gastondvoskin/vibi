@@ -33,3 +33,12 @@ export const planData = [
       basico: <HiXMark />,
     },
   ];
+
+
+
+  export const serviceData=[
+{image:"/example.png"},
+{image:"/example.png"},
+{image:"/example.png"},
+{image:"/example.png"}
+  ]
