@@ -50,7 +50,7 @@ async function getRandomCity(): Promise<string> {
             city: randomCity,
             urbanization: 'Urbanización Aleatoria', // Puedes generar una urbanización aleatoria si lo deseas.
             floor: 2, // Puedes establecer un piso aleatorio si lo prefieres.
-            property_type: 'hokla', // Puedes generar un tipo aleatorio si lo deseas.
+            property_type: 'casa', // Puedes generar un tipo aleatorio si lo deseas.
           },
         });
   
@@ -60,7 +60,7 @@ async function getRandomCity(): Promise<string> {
             previous_price,
             current_price,
             description: 'Descripción aleatoria', // Puedes generar una descripción aleatoria si lo deseas.
-            urls_photos: ['https://example.com/photo1.jpg', 'https://example.com/photo2.jpg'],
+            urls_photos: ["https://www.thehousedesigners.com/images/uploads/SiteImage-Landing-modern-house-plans-1.webp"],
             urls_videos: ['https://example.com/video1.mp4'],
             propertyInformation: {
               connect: {
