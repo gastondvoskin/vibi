@@ -1,10 +1,23 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Publication } from "../../../../redux/reducers/interfaces/detail/detail";
+
 
 
 const Detalle = () => {
+    const [detail, setDetail] = useState<Publication | null>(null);
+    const publicationId = "1eebe05e-7abc-4228-a03e-06815829eb4b"
+    useEffect(() => {
+    axios.get(`http://localhost:3001/api/publication/detail/${publicationId}`)
+    .then(response => response.data)
+    .then(data => setDetail(data))
+  
+    }, [])
+    console.log(detail)
   return (
     <div>
         <section>
-            FOTOS
+            FOTOS {detail?.plan}
         </section>
         <br />
 
