@@ -16,7 +16,7 @@ export default function ButtonMiniVariants({text, leftIcon, rightIcon, bgColor, 
             <section className={`${txColor} ` + "text-[24px]"}>
                 {leftIcon}
             </section>
-            <span className={`mx-2 px-6 py-3 ${txColor} `} >{text}</span>
+            <span className={`px-6 py-3 ${txColor} `} >{text}</span>
             <section  className={`${txColor} ` + "text-[24px]"}>
                 {rightIcon}
             </section>
