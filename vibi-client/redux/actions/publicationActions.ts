@@ -1,11 +1,13 @@
+import instance from "../../utils/axiosconfig";
 import { GET_PUBLICATIONS } from "./actions-types";
-import axios from "axios";
+
 
 export const getPublicationsAction = (page:number) => {
-  const API_URL = `http://localhost:3001/api/publication/?page=${page}`;
+  const API_URL = `publication/?page=${page}`;
   return async (dispatch: any) => {
     try {
-      const response = await axios.get(API_URL);
+      const response = await instance.get(API_URL);
+      console.log(response)
       const publications = response.data;
       dispatch({
         type: GET_PUBLICATIONS,

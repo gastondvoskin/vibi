@@ -1,12 +1,12 @@
 
-import { GET_PUBLICATIONS } from "./actions-types";
+import { GET_PUBLICATIONS, action } from "../actions/actions-types";
 
 const initialState = {
   publications: [],
 };
 
 
-const rootReducer = (state = initialState, action: any) => {
+const publicationReducer = (state = initialState, action: action) => {
   switch (action.type) {
     case GET_PUBLICATIONS: {
       const publications = action.payload.publications;
@@ -20,4 +20,4 @@ const rootReducer = (state = initialState, action: any) => {
   }
 };
 
-export default rootReducer;
+export default publicationReducer;

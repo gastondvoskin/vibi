@@ -3,7 +3,7 @@ import CardsContainer from "../../../components/home/compra/CardsContainer";
 import Filters from "../../../components/home/compra/Filters";
 import { useEffect } from "react";
 /* import { useDispatch, useSelector } from "react-redux";*/
-import { getPublicationsAction } from "../../../redux/actions";
+import { getPublicationsAction } from "../../../redux/actions/publicationActions";
 
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 
