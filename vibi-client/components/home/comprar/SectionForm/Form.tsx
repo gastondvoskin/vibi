@@ -1,33 +1,35 @@
-/* eslint-disable no-unused-vars */
+
 import { InputAutocomplete } from "../common/InputAutocomplete";
 import ButtonVariants from "../../../commons/ButtonVariants"
 export interface option {
     value: string
     label: string
 }
-import { citiesPeru, budgets, budgetsAlquiler, districts, roomsOptions } from "../../../../utils/homeFormData";
+import { departmentsPeru, budgets, budgetsAlquiler, districts, roomsOptions } from "../../../../utils/homeFormData";
 interface Districts {
-    city: string
+    department: string
     districts: option[]
 }
 interface FormProps {
     form: {
-        city: string
+        department: string
         district: string
         budget: string
         rooms: string
         budgetAlquiler: string
     }
+    // eslint-disable-next-line no-unused-vars
     handleChangeForm: (value: string, name: string) => void
-    handleChangeCity: (value: string, name: string) => void
+    // eslint-disable-next-line no-unused-vars
+    handleChangeDepartment: (value: string, name: string) => void
     buy: boolean
 }
 
-const Form = ({ form, handleChangeForm, buy, handleChangeCity }: FormProps) => {
+const Form = ({ form, handleChangeForm, buy, handleChangeDepartment }: FormProps) => {
 
 
-    const { city, budget, budgetAlquiler, district, rooms } = form
-    const districtData: Districts[] = districts.filter((item) => item.city.toLowerCase() === city)
+    const { department, budget, budgetAlquiler, district, rooms } = form
+    const districtData: Districts[] = districts.filter((item) => item.department.toLowerCase() === department)
 
     const handleSubmmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -36,10 +38,11 @@ const Form = ({ form, handleChangeForm, buy, handleChangeCity }: FormProps) => {
     return (
         <form className="space-y-4" onSubmit={handleSubmmit}>
             <div>
-                <InputAutocomplete data={citiesPeru} label="Departamentos" name='city' value={city} setValue={handleChangeCity} />
+                {/* TODO: Cambiar a provincias el flujo por ahora solo cambie el label */}
+                <InputAutocomplete data={departmentsPeru} label="Provincias" name='department' value={department} setValue={handleChangeDepartment} />
             </div>
             <div>
-                <InputAutocomplete data={districtData[0]?.districts} label="Distritos" name='district' value={district} setValue={handleChangeForm} disabled={!city} />
+                <InputAutocomplete data={districtData[0]?.districts} label="Distritos" name='district' value={district} setValue={handleChangeForm} disabled={!department} />
             </div>
             <div className="flex flex-row gap-10 ">
                 {buy && <InputAutocomplete data={budgets} label="Presupuesto" size='small' name='budget' value={budget} setValue={handleChangeForm} disabled={!district} extraText={true} />}

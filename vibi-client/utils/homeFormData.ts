@@ -1,29 +1,21 @@
-export const citiesPeru = [
+export const departmentsPeru = [
   {
     value: "lima",
     label: "Lima",
   },
   {
-    value: "callao",
-    label: "Callao",
+    value: "ancash",
+    label: "Ancash",
   },
   {
-    value: "ica",
-    label: "Ica",
-  },
-  {
-    value: "arequipa",
-    label: "Arequipa",
-  },
-  {
-    value: "trujillo",
-    label: "Trujillo",
+    value: "amazonas",
+    label: "Amazonas",
   },
 ];
 
 export const districts = [
   {
-    city: "Lima",
+    department: "Lima",
     districts: [
       {
         value: "miraflores",
@@ -48,7 +40,7 @@ export const districts = [
     ],
   },
   {
-    city: "Callao",
+    department: "Callao",
     districts: [
       {
         value: "bellavista",
@@ -70,6 +62,78 @@ export const districts = [
         value: "callao",
         label: "Callao",
       },
+    ],
+  },
+  {
+    department: "Amazonas",
+    districts: [
+      { value: "chachapoyas", label: "Chachapoyas" },
+      { value: "asuncion", label: "Asunción" },
+      { value: "balsas", label: "Balsas" },
+      { value: "cheto", label: "Cheto" },
+      { value: "chiliquin", label: "Chiliquin" },
+      { value: "chuquibamba", label: "Chuquibamba" },
+      { value: "granada", label: "Granada" },
+      { value: "huancas", label: "Huancas" },
+      { value: "la_jalca", label: "La Jalca" },
+      { value: "leimebamba", label: "Leimebamba" },
+      { value: "levanto", label: "Levanto" },
+      { value: "magdalena", label: "Magdalena" },
+      { value: "soloco", label: "Soloco" },
+      { value: "sonche", label: "Sonche" },
+      { value: "bagua", label: "Bagua" },
+      { value: "aramango", label: "Aramango" },
+      { value: "copallin", label: "Copallin" },
+      { value: "el_parco", label: "El Parco" },
+      { value: "imaza", label: "Imaza" },
+      { value: "la_peca", label: "La Peca" },
+      { value: "jumbilla", label: "Jumbilla" },
+      { value: "chisquilla", label: "Chisquilla" },
+      { value: "churuja", label: "Churuja" },
+      { value: "corosha", label: "Corosha" },
+      { value: "cuispes", label: "Cuispes" },
+      { value: "florida", label: "Florida" },
+      { value: "jazan", label: "Jazan" },
+      { value: "recta", label: "Recta" },
+      { value: "san_carlos", label: "San Carlos" },
+      { value: "shipasbamba", label: "Shipasbamba" },
+      { value: "valera", label: "Valera" },
+      { value: "yambrasbamba", label: "Yambrasbamba" },
+      { value: "nieva", label: "Nieva" },
+      { value: "el_cenepa", label: "El Cenepa" },
+      { value: "rio_santiago", label: "Río Santiago" },
+      { value: "lamud", label: "Lamud" },
+      { value: "camporredondo", label: "Camporredondo" },
+      { value: "cocabamba", label: "Cocabamba" },
+      { value: "colcamar", label: "Colcamar" },
+      { value: "conila", label: "Conila" },
+      { value: "inguilpata", label: "Inguilpata" },
+      { value: "longuita", label: "Longuita" },
+      { value: "lonya_chico", label: "Lonya Chico" },
+      { value: "luya", label: "Luya" },
+    ],
+  },
+  {
+    department: "Ancash",
+    districts: [
+      { label: "Huaraz", value: "huaraz" },
+      { label: "Cochabamba", value: "cochabamba" },
+      { label: "Colcabamba", value: "colcabamba" },
+      { label: "Huanchay", value: "huanchay" },
+      { label: "Independencia", value: "independencia" },
+      { label: "Jangas", value: "jangas" },
+      { label: "La Libertad", value: "lalibertad" },
+      { label: "Olleros", value: "olleros" },
+      { label: "Pampas Grande", value: "pampasgrande" },
+      { label: "Pariacoto", value: "pariacoto" },
+      { label: "Pira", value: "pira" },
+      { label: "Tarica", value: "tarica" },
+      { label: "Aija", value: "aija" },
+      { label: "Coris", value: "coris" },
+      { label: "Huacllan", value: "huacllan" },
+      { label: "La Merced", value: "lamerced" },
+      { label: "Succha", value: "succha" },
+      { label: "Llamellin", value: "llamellin" },
     ],
   },
 ];
