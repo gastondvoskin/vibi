@@ -1,9 +1,9 @@
-import {action} from "../actions/actions-types"
+
 const initialState = {
     userData: {}
 }
-
-const userReducer = (state = initialState, action: action) =>{
+//! HAY QUE ACONDICIONAR ESTE REDUCER COMO EL DE PUBLICATION
+const userReducer = (state = initialState, action: any) =>{
     switch(action.type){
         case "Example" : {
             const example = action.payload

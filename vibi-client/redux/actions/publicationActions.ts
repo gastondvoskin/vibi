@@ -1,15 +1,8 @@
 import { Dispatch } from 'redux';
 import instance from "../../utils/axiosconfig";
-import { GET_PUBLICATIONS } from "./actions-types";
+import { CreatePublication, GET_PUBLICATIONS, GetPublicationsAction } from "./actions-types-publication";
 
-interface GetPublicationsAction {
-  type: 'GET_PUBLICATIONS';
-  payload: [];
-}
-interface CreatePublication {
-  type: 'CREATE_PUBLICATION',
-  payload: {}
-}
+
 
 export const getPublicationsAction = (page:number) => {
   const API_URL = `publication/?page=${page}`;

@@ -1,5 +1,5 @@
 
-import { CREATE_PUBLICATION, GET_PUBLICATIONS } from "../actions/actions-types";
+import { CREATE_PUBLICATION, GET_PUBLICATIONS } from "../actions/actions-types-publication";
 import { publicationActions } from "../actions/publicationActions";
 import { PublicationReducer } from "./interfaces/interfaceReducers";
 
