@@ -14,7 +14,7 @@ const SelectFilter = ({label, options}: SelectFilterProps) => {
     <select className="flex border w-auto h-10 mx-1 rounded" name="vivienda" id="vivienda" onChange={() => handleChange()}>
       <option value={label} >{label}</option>
       {options.map((opt, index) => {
-        return (<option value={opt}>{opt}</option>)
+        return (<option key={index} value={opt}>{opt}</option>)
       })} 
     </select>
   );
