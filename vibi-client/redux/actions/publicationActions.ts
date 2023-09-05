@@ -1,11 +1,13 @@
 import { Dispatch } from 'redux';
 import instance from "../../utils/axiosconfig";
 import { CreatePublication, GET_PUBLICATIONS, GetPublicationsAction } from "./actions-types-publication";
+import axios from 'axios';
 
 
 
 export const getPublicationsAction = (page:number) => {
   const API_URL = `publication/?page=${page}`;
+  
   return async (dispatch: Dispatch<GetPublicationsAction>) => {
     try {
       //!FALTA PONER UN TIPADO PARA EL GET
@@ -21,12 +23,5 @@ export const getPublicationsAction = (page:number) => {
   };
 };
 
+
 export type publicationActions = GetPublicationsAction | CreatePublication
-
-
-/* export const filterByCreator = (creator) => {
-    return {
-        type: FILTER_BY_CREATOR,
-        payload: creator
-    };
-}; */
