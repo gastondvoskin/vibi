@@ -1,3 +1,5 @@
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { ReactNode } from "react"
 
 interface Props {
@@ -9,12 +11,14 @@ interface Props {
     brColor?: string,
     txColor: string,
     width?: string,
-    txtCenter?: string
+    txtCenter?: string,
+    href?: string
 }
-export default function ButtonVariants({ text, leftIcon, rightIcon, bgColor, txColor, border, brColor, width }: Props) {
+export default function ButtonVariants({ text, leftIcon, rightIcon, bgColor, txColor, border, brColor, width, href }: Props) {
+    const pathname = usePathname()
     return (
         <>
-            <button className={border ? `border ${brColor} ${bgColor}  rounded-[4px] px-6 py-3 flex  justify-center ${width} text-center` : ` ${bgColor}  rounded-[4px] px-6 py-3 flex justify-center ${width} text-center`}>
+            <Link href={pathname + href} className={border ? `border ${brColor} ${bgColor}  rounded-[4px] px-6 py-3 flex  justify-center ${width} text-center` : ` ${bgColor}  rounded-[4px] px-6 py-3 flex justify-center ${width} text-center`}>
                 <section className={`${txColor} ` + "text-[24px]"}>
                     {leftIcon}
                 </section>
@@ -22,7 +26,7 @@ export default function ButtonVariants({ text, leftIcon, rightIcon, bgColor, txC
                 <section className={`${txColor}` + "text-[24px]"}>
                     {rightIcon}
                 </section>
-            </button>
+            </Link>
         </>
     )
 }

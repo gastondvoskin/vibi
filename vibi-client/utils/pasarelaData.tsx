@@ -33,3 +33,12 @@ export const planData = [
       basico: <HiXMark />,
     },
   ];
+
+
+
+  export const serviceData=[
+{image:"/example.png",text:"Book de fotos pro"},
+{image:"/example.png",text:"Tour virtual 360°"},
+{image:"/example.png",text:"Video profesional"},
+{image:"/example.png",text:"Cartel exterior"}
+  ]

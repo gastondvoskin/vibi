@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 
 
 export class PublicationController {
-  async getPublications(req: Request, res: Response) {
+  /* async getPublications(req: Request, res: Response) {
     try {
       const publications = await prisma.publication.findMany({
         select:{
@@ -31,7 +31,7 @@ export class PublicationController {
     } catch (error) {
       res.status(500).json({ error: 'Something went wrong.' });
     }
-  }
+  } */
 
   async postPublication(req: Request, res: Response) {
     try {
@@ -122,10 +122,16 @@ export class PublicationController {
     }
   }
 
-  async getFilteredProperties(req: Request, res: Response) {
+  async getPublications(req: Request, res: Response) {
     try {
-      const { propertyType, minRooms, maxRooms, minPrice, maxPrice,city } = req.query;
-  
+      const { propertyType, minRooms, maxRooms, minPrice, maxPrice,city, page } = req.query;
+      
+      // Define el número de resultados por página
+     const resultsPerPage = 10;
+
+      // Calcula el desplazamiento en función de la página solicitada
+    const offset = (Number(page) - 1) * resultsPerPage;
+
       // Construir condiciones para la consulta
       const conditions: any = {};
       
@@ -148,7 +154,26 @@ export class PublicationController {
       if (city) {
         conditions.propertyAddress = {...conditions.propertyAddress ,city: { equals: city as string ,mode: 'insensitive'} };
       }
-  
+      
+      let totalPages = 1; // Establece el valor predeterminado de totalPages en 1
+
+    // Si 'page' es igual a 1, realiza una consulta para contar la cantidad total de resultados
+    if (Number(page) === 1) {
+      const totalCount = await prisma.publication.count({
+        where: {
+          isActive: true,
+          property: {
+            ...(conditions.property || {}),
+            propertyAddress: { ...(conditions.propertyAddress || {}) },
+            propertyInformation: { ...(conditions.propertyInformation || {}) },
+          },
+        },
+      });
+
+      // Calcula la cantidad de páginas en función de la cantidad total de resultados
+      totalPages = Math.ceil(totalCount / resultsPerPage);
+    }
+
       // Realizar la consulta con las condiciones
       const filteredProperties = await prisma.publication.findMany({
         where: {
@@ -168,13 +193,24 @@ export class PublicationController {
             }
           },
         },
+        skip: offset, // Salta los resultados anteriores a la página actual
+        take: resultsPerPage, // Limita la cantidad de resultados por página
       });
       
       if (!filteredProperties.length){
         return res.status(200).send("There are no results");
       }
 
-      res.status(200).json(filteredProperties);
+      const response: any = {
+        publications: filteredProperties,
+      };
+  
+      // Agregar 'pages' solo si pageNumber es 1
+      if (Number(page) === 1) {
+        response.totalPages = totalPages;
+      }
+  
+      res.status(200).json(response);
 
     } catch (error : any) {
       console.log(error.message);

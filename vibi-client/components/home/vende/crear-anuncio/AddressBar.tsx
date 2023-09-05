@@ -2,7 +2,10 @@ import ButtonVariants from "../../../commons/ButtonVariants";
 import InputAddress from "./InputAddress";
 import SelectAddress from "./SelectAddress";
 
+
 export default function AddressBar() {
+
+
   return (
     <>
       <section className="flex py-4 px-6 space-x-4 w-fit bg-white shadow rounded-lg ">

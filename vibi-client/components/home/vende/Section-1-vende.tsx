@@ -5,6 +5,7 @@ import { SubText, SubTitle, Text, Title } from "./commons/LandingTexts";
 import { HiOutlineShieldCheck } from "react-icons/hi";
 import ButtonVariants from "../../commons/ButtonVariants";
 export default function Section1() {
+
   return (
     <>
       <div className="bg-mygrey py-11 px-44 shadow-sm">
@@ -25,6 +26,8 @@ export default function Section1() {
                 bgColor="bg-primary"
                 txColor="text-vibiWhite"
                 text="Empieza a vender"
+                href={'/crear-anuncio'}
+
               />
               <ButtonVariants
                 border={true}
@@ -32,6 +35,7 @@ export default function Section1() {
                 bgColor="bg-white"
                 txColor="text-vibiDarkBlue"
                 text="Cotiza tu casa gratis"
+                href={'/cotiza-tu-casa'}
               />
             </section>
             <section className="flex space-x-1 items-center">
