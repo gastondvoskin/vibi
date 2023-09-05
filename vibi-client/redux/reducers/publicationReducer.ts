@@ -1,5 +1,6 @@
 
-import { CREATE_PUBLICATION, GET_PUBLICATIONS, action } from "../actions/actions-types";
+import { CREATE_PUBLICATION, GET_PUBLICATIONS } from "../actions/actions-types";
+import { publicationActions } from "../actions/publicationActions";
 import { PublicationReducer } from "./interfaces/interfaceReducers";
 
 const initialState : PublicationReducer = {
@@ -34,10 +35,10 @@ const initialState : PublicationReducer = {
 };
 
 
-const publicationReducer = (state = initialState, action: action) => {
+const publicationReducer = (state = initialState, action: publicationActions) => {
   switch (action.type) {
     case GET_PUBLICATIONS: {
-      const publications = action.payload.publications;
+      const publications = action.payload;
       return {...state, publications};
     }
     case CREATE_PUBLICATION: {

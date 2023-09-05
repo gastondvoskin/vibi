@@ -5,8 +5,3 @@ export const SET_PROPERTY_ADDRESS = "SET_PROPERTY_ADDRESS";
 export const SET_PROPERTY_DETAIL = "SET_PROPERTY_DETAIL";
 export const PUBLICATION = "PUBLICATION";
 export const CREATE_PUBLICATION = "CREATE_PUBLICATION";
-
-export interface action {
-  type: string;
-  payload?: any;
-}
