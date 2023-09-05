@@ -1,11 +1,11 @@
 "use client";
 
-import ViewFeatured from "../../../components/home/pasarela-pagos/View-destacado";
+import Services from "../../../components/home/pasarela-pagos/View-services";
 
 export default function MarcePlayergrounds() {
   return (
-    <main>
-      <ViewFeatured/>
+    <main className="items-center flex justify-center">
+      <Services/>
     </main>
   );
 }

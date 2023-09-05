@@ -24,6 +24,6 @@ export const Title: React.FC<Props> = ({ text, color }) => {
   export const CardText: React.FC<Props> = ({ text }) => {
     return <p className="text-vibiDarkBlue text-xl font-medium "  >{text}</p>;
   };
-  export const FeaturedText:React.FC<Props> = ({text,color})=>{
+  export const FText:React.FC<Props> = ({text,color})=>{
     return <p className={(color)}>{text}</p>
   }
