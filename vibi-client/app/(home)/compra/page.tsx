@@ -9,10 +9,11 @@ import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 
 export default function Compra() {
   const currentPublications = useAppSelector((state: any) => state.publications);
+  const page= 1
   const dispatch = useAppDispatch(); 
 
   useEffect(() => {
-    if (!currentPublications.length) {dispatch(getPublicationsAction())}
+    if (!currentPublications.length) {dispatch(getPublicationsAction(page))}
   }, [dispatch, currentPublications]);
 
   return (
