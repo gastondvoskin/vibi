@@ -17,8 +17,7 @@ export default function Compra() {
   }, [dispatch, currentPublications]);
 
   return (
-    <main>
-      <h1>Vista Compra</h1>
+    <main className="max-w-[1280px]">
       <Filters />
       <CardsContainer />
     </main>
