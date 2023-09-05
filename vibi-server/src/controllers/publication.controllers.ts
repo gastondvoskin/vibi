@@ -1,5 +1,7 @@
 import prisma from '@/config/prisma-client.config';
+import createRandomPublication from '@/utils/randomPublications';
 import { Request, Response } from 'express';
+
 
 export class PublicationController {
   /* async getPublications(req: Request, res: Response) {
@@ -212,6 +214,23 @@ export class PublicationController {
 
     } catch (error : any) {
       console.log(error.message);
+      res.status(400).json({Error:error})
+    }
+  }
+
+  async  postRandomPublications(req: Request, res: Response) {
+    const { userId } = req.params;
+    const { numberOfPublications } = req.body;
+    try {
+      if (!userId || !numberOfPublications || numberOfPublications < 1) {
+        return res.status(400).json({ error: 'Parámetros inválidos.' });
+      }
+    
+      await createRandomPublication(userId, numberOfPublications);
+      res.status(200).json({ message: `Creando ${numberOfPublications} publicaciones aleatorias.` });
+    
+    } catch (error) {
+      console.log(error);
       res.status(400).json({Error:error})
     }
   }
