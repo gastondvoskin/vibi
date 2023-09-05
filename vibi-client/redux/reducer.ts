@@ -9,7 +9,7 @@ const initialState = {
 const rootReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case GET_PUBLICATIONS: {
-      const publications = action.payload;
+      const publications = action.payload.publications;
       return {...state, publications};
     }
 
