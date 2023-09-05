@@ -1,11 +1,19 @@
-// store.ts
-
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import rootReducer from './reducer'
 
 
-// Infer the RootState and AppDispatch types from the store itself
+import { combineReducers } from 'redux';
+import publicationReducer from './reducers/publicationReducer';
+import userReducer from './reducers/userReducer';
+
+
+const rootReducer = combineReducers({
+  publication: publicationReducer, 
+  user: userReducer
+
+});
+
+
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));

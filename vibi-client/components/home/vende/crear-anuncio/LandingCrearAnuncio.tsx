@@ -5,6 +5,8 @@ import Section2map from "../commons/Section-2-map";
 import { section_2_vende } from "../../../../utils/landingData"; 
 
 export default function LandingCrearAnuncio() {
+
+
   return (
     <>
       <div className="flex flex-col">

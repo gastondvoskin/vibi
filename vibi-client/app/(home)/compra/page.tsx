@@ -3,9 +3,10 @@ import CardsContainer from "../../../components/home/compra/CardsContainer";
 import Filters from "../../../components/home/compra/Filters";
 import { useEffect } from "react";
 /* import { useDispatch, useSelector } from "react-redux";*/
-import { getPublicationsAction } from "../../../redux/actions";
+
 
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { getPublicationsAction } from "../../../redux/actions/publicationActions";
 
 export default function Compra() {
   const currentPublications = useAppSelector((state: any) => state.publications);
