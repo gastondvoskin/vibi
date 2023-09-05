@@ -10,11 +10,12 @@ interface Props {
     txColor: string,
     width?: string,
     txtCenter?: string
+    onClick?: (...args: any[]) => any
 }
-export default function ButtonVariants({ text, leftIcon, rightIcon, bgColor, txColor, border, brColor, width }: Props) {
+export default function ButtonVariants({ text, leftIcon, rightIcon, bgColor, txColor, border, brColor, width, onClick }: Props) {
     return (
         <>
-            <button className={border ? `border ${brColor} ${bgColor}  rounded-[4px] px-6 py-3 flex  justify-center ${width} text-center` : ` ${bgColor}  rounded-[4px] px-6 py-3 flex justify-center ${width} text-center`}>
+            <button onClick={onClick} className={border ? `border ${brColor} ${bgColor}  rounded-[4px] px-6 py-3 flex  justify-center ${width} text-center` : ` ${bgColor}  rounded-[4px] px-6 py-3 flex justify-center ${width} text-center`}>
                 <section className={`${txColor} ` + "text-[24px]"}>
                     {leftIcon}
                 </section>

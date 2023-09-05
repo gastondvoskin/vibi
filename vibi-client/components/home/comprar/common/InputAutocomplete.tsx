@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 "use client"
 
 import * as React from "react"
@@ -5,6 +6,7 @@ import { CheckIcon } from "lucide-react"
 import { BiChevronDown } from 'react-icons/bi'
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { option } from "../SectionForm/Form"
 import {
     Command,
     CommandEmpty,
@@ -19,17 +21,20 @@ import {
 } from "@/components/ui/popover"
 
 interface InputAutocompleteProps {
-    citiesPeru: any
+    data: option[]
     label: string
     size?: string
     disabled?: boolean
     value: string
-    setValue: React.Dispatch<React.SetStateAction<string>>
+    setValue: (value: string, name: string) => void
+    name: string
+    extraText?: boolean
 }
 
 
+
 export function InputAutocomplete({
-    citiesPeru, label, size, disabled, value, setValue
+    data, label, size, disabled, value, setValue, name, extraText
 }: InputAutocompleteProps) {
 
     const [open, setOpen] = React.useState(false)
@@ -37,7 +42,7 @@ export function InputAutocomplete({
     const widthInput = size === "small" ? "w-[190px]" : "w-[400px]"
     return (
         <div className={`${widthContainer}`}>
-            <label className="text-slate-500 text-xs font-medium leading-3">{label}</label>
+            <label className="text-slate-500 text-xs font-medium leading-3">{`${label} ${extraText ? 'hasta' : ''}`}</label>
             <div className="relative w-full h-12 px-4 py-3.5 bg-white rounded border border-slate-300 justify-center items-center inline-flex">
                 <Popover open={open} onOpenChange={setOpen} >
                     <PopoverTrigger asChild>
@@ -48,11 +53,10 @@ export function InputAutocomplete({
                             aria-expanded={open}
                             className="justify-between ms-[-10px] text-blue-950 text-base font-normal leading-tight w-[416px] hover:no-underline"
                         >
-                            {value
-                                ? citiesPeru.find((city) =>
-                                    city.value == value.replace(' ', '')
-                                )?.label
-                                : "Seleccionar"}
+                            {value && data?.find((option) =>
+                                option.value == value.replace(' ', '')
+                            )?.label}
+                            {value == '' && 'Seleccionar'}
                             <BiChevronDown size={24} />
                         </Button>
 
@@ -60,22 +64,21 @@ export function InputAutocomplete({
                     <PopoverContent className={`${widthInput} p-0`}>
                         <Command className="max-h-[240px]" >
                             <CommandInput placeholder={`Seleccionar ${label}`} className={`h-9 ${size == 'small' ? 'text-xs' : 'text-md'}`} />
-                            <CommandEmpty>No se encontraron ${label}.</CommandEmpty>
+                            <CommandEmpty>No se encontraron {label}.</CommandEmpty>
                             <CommandGroup>
-                                {citiesPeru.map((city) => (
+                                {data?.map((option) => (
                                     <CommandItem
-                                        key={city.value}
+                                        key={option.value}
                                         onSelect={(currentValue) => {
-
-                                            setValue(currentValue === value ? "" : currentValue)
+                                            setValue(currentValue === value ? '' : currentValue, name)
                                             setOpen(false)
                                         }}
                                     >
-                                        {city.label}
+                                        {option.label}
                                         <CheckIcon
                                             className={cn(
                                                 "ml-auto h-4 w-4",
-                                                value === city.value ? "opacity-100" : "opacity-0"
+                                                value === option.value ? "opacity-100" : "opacity-0"
                                             )}
                                         />
                                     </CommandItem>

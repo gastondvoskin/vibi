@@ -1,9 +1,9 @@
-import Comprar from "../../../../components/home/comprar/Comprar";
+import SectionForm from "../../../../components/home/comprar/SectionForm/SectionForm";
 
 export default function Page() {
     return (
         <main>
-            <Comprar />
+            <SectionForm />
         </main>
 
     );
