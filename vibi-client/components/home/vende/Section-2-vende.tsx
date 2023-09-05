@@ -21,6 +21,7 @@ export default function Section2() {
           bgColor="bg-primary"
           txColor="text-vibiWhite"
           text="Empieza ahora"
+          href="/cotiza-tu-casa"
         />
       </div>
     </>
