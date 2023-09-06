@@ -3,8 +3,7 @@ import ButtonVariants from "../../commons/ButtonVariants";
 const SectionHome3 = () => {
     return (
         <div>
-            <div className="flex flex-row max-h-[540px] px-12">
-
+            <div className="flex flex-row max-h-[540px] mx-12 bg-white shadow_home ">
                 <div className="w-[40%] bg-[url('/home3.png')]">
                 </div>
                 <div className="w-[40%] py-10 px-16">

@@ -6,7 +6,7 @@ import SectionHome5 from "../../../../components/home/comprar/SectionHome5";
 
 export default function Page() {
     return (
-        <main className="space-y-10  tracking-[-0.16px]">
+        <main className="space-y-10  tracking-[-0.16px] bg-[#F7F8FA]">
             <SectionForm />
             <SectionHome2 />
             <SectionHome3 />

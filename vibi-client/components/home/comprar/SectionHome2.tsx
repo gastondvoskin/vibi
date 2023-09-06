@@ -2,9 +2,9 @@ import ButtonVariants from "../../commons/ButtonVariants";
 
 const SectionHome2 = () => {
     return (
-        <div>
-            <div className="flex flex-row justify-around max-h-[540px] px-12">
-                <div className="w-1/3 py-10 px-7">
+        <div className="mx-12">
+            <div className="flex flex-row justify-between max-h-[540px] shadow_home bg-white ps-4">
+                <div className="w-1/3 py-10 mx-7">
                     <div className="mb-12">
                         <div className="mb-3">
                             <p className="font-bold text-4xl text-vibiDarkBlue pb-0.5 ">

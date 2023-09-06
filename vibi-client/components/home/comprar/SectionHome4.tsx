@@ -2,8 +2,8 @@ import ButtonVariants from "../../commons/ButtonVariants";
 
 const SectionHome4 = () => {
     return (
-        <div>
-            <div className="flex flex-row justify-around max-h-[540px] px-12">
+        <div className="mx-12">
+            <div className="flex flex-row justify-between max-h-[540px] shadow_home bg-white ps-4">
                 <div className="w-[35%] py-10 px-7">
                     <div className="mb-10">
                         <div className="mb-2">
@@ -19,7 +19,7 @@ const SectionHome4 = () => {
                         <ButtonVariants text="Ayúdame a vender con un agente" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[85%]" />
                     </div>
                 </div>
-                <div className="w-[40%] bg-[url('/home4.png')]">
+                <div className="w-[40%] bg-[url('/home4.png')] h-[474px]">
                     <div className="relative top-[47%] w-[90%] mx-auto bg-white z-10 p-6 rounded-sm">
 
                         <h2 className="text-2xl mb-2 font-bold text-vibiDarkBlue">

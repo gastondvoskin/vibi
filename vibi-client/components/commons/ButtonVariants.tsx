@@ -10,7 +10,9 @@ interface Props {
     txColor: string,
     width?: string,
     txtCenter?: string
+    // eslint-disable-next-line no-unused-vars
     onClick?: (...args: any[]) => any
+
 }
 export default function ButtonVariants({ text, leftIcon, rightIcon, bgColor, txColor, border, brColor, width, onClick }: Props) {
     return (

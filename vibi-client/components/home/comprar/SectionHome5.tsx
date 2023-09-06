@@ -4,7 +4,7 @@ import ButtonVariants from "../../commons/ButtonVariants";
 const SectionHome5 = () => {
     return (
         <div>
-            <div className="flex flex-row max-h-[540px] px-12">
+            <div className="flex flex-row max-h-[540px] mx-12 bg-white shadow_home">
 
                 <div className="w-[40%]  bg-[#F7C6DD] p-16">
                     <Image src="/calculator.svg" width={500} height={500} alt='calculator' />
