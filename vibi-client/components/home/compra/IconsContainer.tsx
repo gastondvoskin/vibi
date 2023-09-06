@@ -5,14 +5,15 @@ import roomIcon from "../../../assets/icons/Room.svg";
 import bathIcon from "../../../assets/icons/Bath.svg";
 import parkingIcon from "../../../assets/icons/Parking.svg";
 import Icon from "./Icon";
+import { PropertyInformation } from "../../../interfaces/detail/detail";
+
 
 interface IconProps {
-  propertyInformation: any;
+  propertyInformation: PropertyInformation;
 }
 
 
-const IconsContainer:  React.FC<IconProps> = ({ propertyInformation }: any) => {
-  
+const IconsContainer:  React.FC<IconProps> = ({ propertyInformation }) => {
   return (
     <div className="flex text-vibiGreyLight my-2">
       <Icon img={areaIcon} text={`${propertyInformation.m2_indoor}m2`}/>
