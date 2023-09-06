@@ -8,7 +8,7 @@ interface IconProps {
 
 const Icon: React.FC<IconProps> = ({img, text}) => {
   return (
-    <div className="flex mr-2">
+    <div className="w-[99px] h-[22px] justify-center items-center gap-3 inline-flex">
       <Image src={img} alt="Area" />
       <span className="ml-1">{text}</span>
     </div>

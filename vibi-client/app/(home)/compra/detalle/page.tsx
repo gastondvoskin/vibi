@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Publication } from "../../../../interfaces/detail/detail";
+import DetailInDetail from "../../../../components/home/compra/DetailInDetail";
 
 const Detalle = () => {
   const [detail, setDetail] = useState<Publication | null>(null);
@@ -43,7 +44,9 @@ const Detalle = () => {
       </section>
       <br />
 
-      <section>Detalle de la vivienda Íconos</section>
+      <section>
+        <DetailInDetail propertyInformation={detail?.property.propertyInformation} propertyFloor={detail?.property.propertyAddress.floor}/>
+      </section>
       <br />
 
       <section>Otras características Íconos true/false</section>
