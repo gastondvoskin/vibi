@@ -3,6 +3,7 @@ import React, { ChangeEvent } from "react";
 interface CheckBoxProps {
   label: string;
   checked: boolean;
+  // eslint-disable-next-line no-unused-vars
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
