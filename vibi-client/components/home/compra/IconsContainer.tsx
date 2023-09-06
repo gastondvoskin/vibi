@@ -4,33 +4,26 @@ import areaIcon from "../../../assets/icons/Area.svg";
 import roomIcon from "../../../assets/icons/Room.svg";
 import bathIcon from "../../../assets/icons/Bath.svg";
 import parkingIcon from "../../../assets/icons/Parking.svg";
+import Icon from "./Icon";
 
-const IconsContainer = ({ propertyInformation }: any) => {
+interface IconProps {
+  propertyInformation: any;
+}
+
+
+const IconsContainer:  React.FC<IconProps> = ({ propertyInformation }: any) => {
   
   return (
     <div className="flex text-vibiGreyLight my-2">
-      <div className="flex mr-2">
-        <Image src={areaIcon} alt="Area" />
-        <span className="ml-1">{propertyInformation.m2_indoor}m2</span>
-      </div>
-
-      <div className="flex mr-2">
-        <Image src={roomIcon} alt="Room" />
-        <span className="ml-1">{propertyInformation.rooms}</span>
-      </div>
-
-      <div className="flex mr-2">
-        <Image src={bathIcon} alt="Bath" />
-        <span className="ml-1">{propertyInformation.baths}</span>
-      </div>
-
-      <div className="flex mr-2">
-        <Image src={parkingIcon} alt="Parking" />
-        <span className="ml-1">{propertyInformation.parking === 0 ? "No" : "Sí"}</span>
-      </div>
-
+      <Icon img={areaIcon} text={`${propertyInformation.m2_indoor}m2`}/>
+      <Icon img={roomIcon} text={`${propertyInformation.rooms}`}/>
+      <Icon img={bathIcon} text={`${propertyInformation.baths}`}/>
+      <Icon img={parkingIcon} text={propertyInformation.garage === 0 ? "No" : "Sí"}/>
     </div>
   );
 };
 
 export default IconsContainer;
+
+
+// {propertyInformation.m2_indoor} ? <Icon img={areaIcon} text={`${propertyInformation.m2_indoor}m2`}/> : ""
