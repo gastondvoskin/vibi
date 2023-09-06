@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import ButtonVariants from "../../commons/ButtonVariants";
-import {FText, SubTitle2 } from "../vende/commons/LandingTexts";
+import { FeaturedText, SubTitle2 } from "../vende/commons/LandingTexts";
 import SectionText from "./commons/Section-text";
 import ButtonMiniVariants from "../../commons/ButtonMiniVariants";
 
@@ -33,7 +33,7 @@ export default function ViewFeatured() {
         />
       </section>
       <section className="w-96 flex justify-center text-center items-center">
-        <FText
+        <FeaturedText
           text="Validado el pago  por nuestro equipo, un experto de Vibi se contactará al número 90240387."
           color="text-vibiDarkGrey text-sm"
         />

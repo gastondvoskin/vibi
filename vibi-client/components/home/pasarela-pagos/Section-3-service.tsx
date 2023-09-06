@@ -40,9 +40,8 @@ export default function Section3() {
         {serviceData.map((e: Service, index: number) => (
           <div
             key={index}
-            className={`relative w-60 h-full my-2 bg-gray-100 border-2 rounded-md p-2 ${
-              checkBoxes[index] ? "border-primary" : ""
-            }`}
+            className={`relative w-60 h-full my-2 bg-gray-100 border-2 rounded-md p-2 ${checkBoxes[index] ? "border-primary" : ""
+              }`}
           >
             <Image
               src={e.image}
@@ -56,11 +55,10 @@ export default function Section3() {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <button
-                className={`${
-                  isHovered(index)
+                className={`${isHovered(index)
                     ? "bg-primary text-white"
                     : "bg-white text-vibiDarkBlue"
-                } py-1 px-4 absolute top-24 right-10 transform translate-y-1/2 rounded-xl`}
+                  } py-1 px-4 absolute top-24 right-10 transform translate-y-1/2 rounded-xl`}
                 onClick={openModal}
               >
                 {isHovered(index) ? "Más Información" : e.text}

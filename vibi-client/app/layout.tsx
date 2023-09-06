@@ -1,9 +1,13 @@
+"use client";
+
 import "./globals.css";
 import type { Metadata } from "next";
 
 /* import axios from "axios";
 
 axios.defaults.baseURL = import.meta.env.API_BASEURL || "http://localhost:3001"; */
+import { Provider } from "react-redux";
+import store from "../redux/store";
 
 export const metadata: Metadata = {
   title: "Vibi",
@@ -16,9 +20,11 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={"font-normal max-w-[1280px] flex flex-col justify-center m-auto text-[#102C57]"}>
-        {children}
-      </body>
+      <Provider store={store}>
+        <body className={"font-normal flex flex-col bg-[#F7F8FA] justify-center m-auto text-[#102C57]"}>
+          {children}
+        </body>
+      </Provider>
     </html>
   );
 }

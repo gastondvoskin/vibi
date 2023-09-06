@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FText, SubTitle2 } from "../vende/commons/LandingTexts";
+import { FeaturedText } from "../vende/commons/LandingTexts";
 import ButtonMiniVariants from "../../commons/ButtonMiniVariants";
 
 export default function Section1() {
@@ -16,7 +16,7 @@ export default function Section1() {
             height={80}
             className="w-8 h-8"
           />
-          <FText text="¡Enhorabuena! Tu anuncio esta listo" color="text-xl font-bold"/>
+          <FeaturedText text="¡Enhorabuena! Tu anuncio esta listo" color="text-xl font-bold" />
         </section>
         <ButtonMiniVariants
           bgColor=""
