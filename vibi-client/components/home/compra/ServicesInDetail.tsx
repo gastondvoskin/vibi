@@ -7,8 +7,7 @@ import Floor from "../../../assets/icons/Floor.svg";
 
 
 
-
-const DetailInDetail = ({propertyInformation, propertyFloor}: any) => {
+const ServicesInDetail = ({propertyInformation, propertyFloor}: any) => {
   return (
     <div className="">
         <h1 className="text-zinc-900 text-xl font-bold">Detalle de la vivienda</h1>
@@ -23,7 +22,6 @@ const DetailInDetail = ({propertyInformation, propertyFloor}: any) => {
         <hr className="w-[700px]"/>
     </div>
   )
-  
 }
 
-export default DetailInDetail
+export default ServicesInDetail
