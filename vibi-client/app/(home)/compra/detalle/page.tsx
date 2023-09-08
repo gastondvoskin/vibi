@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Publication } from "../../../../interfaces/detail/detail";
 import DetailInDetail from "../../../../components/home/compra/DetailInDetail";
+import OtherCharacteristics from "../../../../components/home/compra/OtherCharacteristics";
+import ServicesInDetail from "../../../../components/home/compra/ServicesInDetail";
 
 const Detalle = () => {
   const [detail, setDetail] = useState<Publication | null>(null);
@@ -15,8 +17,8 @@ const Detalle = () => {
       .then((response) => response.data)
       .then((data) => setDetail(data));
   }, []);
-  console.log(detail);
-  console.log(detail?.property.urls_photos);
+  // console.log(detail);
+  // console.log(detail?.property.urls_photos);
 
   return (
     <div>
@@ -49,10 +51,14 @@ const Detalle = () => {
       </section>
       <br />
 
-      <section>Otras características Íconos true/false</section>
+      <section>
+        <OtherCharacteristics propertyDetail={detail?.property.propertyDetail} />
+      </section>
       <br />
 
-      <section>Servicios Íconos true/false</section>
+      <section>
+        <ServicesInDetail propertyInformation={detail?.property.propertyInformation} propertyFloor={detail?.property.propertyAddress.floor}/>
+      </section>
       <br />
 
       <section>
