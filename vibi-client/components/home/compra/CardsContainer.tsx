@@ -8,21 +8,19 @@ const CardsContainer = () => {
   );
 
   return (
-    <div className="w-[840px] h-[963px] grid grid-cols-3">
+    <div className="w-[840px] grid grid-cols-3">
       {currentPublications?.map((publ: any, index: number) => {
-        console.log("index: ", index);
-        if (index === 5) {
-          return <OlvidateDeBuscar />
-        } else {
-          return (
+        return (
+          <div>
+            {index === 5 ? <OlvidateDeBuscar /> : ""}
             <Card
               key={index}
               property={publ.property}
               propertyAddress={publ.propertyAddress}
               propertyInformation={publ.propertyInformation}
             />
-          );
-        }
+          </div>
+        );
       })}
     </div>
   );

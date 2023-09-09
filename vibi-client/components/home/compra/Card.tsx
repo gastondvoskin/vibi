@@ -19,19 +19,6 @@ const Card = ({ property }: CardInterface) => {
     <Link href="/compra/detalle">
       <div className="w-64 h-96 flex-col justify-start items-start inline-flex m-5 border border-slate-300 hover:border-rose-600">
         <img className="w-64 h-52" src={property.urls_photos[0]} />
-        {/* <div className="h-9 px-4 py-2 flex-col justify-start items-start gap-2.5 flex">
-          <div className="justify-start items-start gap-2.5 inline-flex">
-            <div className="px-2 py-1.5 bg-white justify-start items-center gap-2.5 flex">
-              <div className="text-blue-950 text-xs font-medium leading-3 tracking-tight">
-                Nuevo
-              </div>
-            </div>
-          </div>
-        </div> */}
-        {/* <div className="w-8 h-8 relative">
-          <div className="w-8 h-8 left-0 top-0 absolute bg-white rounded-full" />
-          <div className="w-4 h-4 left-[8px] top-[8px] absolute" />
-        </div> */}
         <div className="h-44 px-4 pt-4 pb-6 flex-col justify-start items-start gap-3 flex">
           <div className="self-stretch justify-between items-start gap-3 inline-flex">
             <div className="grow shrink basis-0 flex-col justify-center items-start gap-6 inline-flex">
