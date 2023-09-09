@@ -5,6 +5,7 @@ import { Publication } from "../../../../interfaces/detail/detail";
 import DetailInDetail from "../../../../components/home/compra/DetailInDetail";
 import OtherCharacteristics from "../../../../components/home/compra/OtherCharacteristics";
 import ServicesInDetail from "../../../../components/home/compra/ServicesInDetail";
+import OlvidateDeBuscar from "../../../../components/home/compra/OlvidateDeBuscar";
 
 const Detalle = () => {
   const [detail, setDetail] = useState<Publication | null>(null);
@@ -30,34 +31,134 @@ const Detalle = () => {
       <section>Links de Inicio - Compra - Filtros</section>
       <br />
 
-      <section>Domicilio Heart Share
-        <p className="">{detail?.property.propertyAddress.street}, {detail?.property.propertyAddress.district}, {detail?.property.propertyAddress.city}</p>
-      </section>
-      <br />
-
       <section>
-        <p>
-            <span>{detail?.property.propertyAddress.property_type}, </span>
-            <span>{detail?.property.propertyInformation.rooms} dormitorios, </span>
-            <span>{detail?.property.propertyInformation.baths} baños.</span>
+        <p className="text-zinc-900 text-2xl font-semibold leading-normal">
+          {detail?.property.propertyAddress.street},{" "}
+          {detail?.property.propertyAddress.district},{" "}
+          {detail?.property.propertyAddress.city}.
         </p>
-        
-        Link Mira en mapa.
+        <p className="text-slate-600 text-base font-normal leading-snug">
+          <span>{detail?.property.propertyAddress.property_type}, </span>
+          <span>
+            {detail?.property.propertyInformation.rooms} dormitorios,{" "}
+          </span>
+          <span>{detail?.property.propertyInformation.baths} baños. </span>
+          <span className="text-rose-600 text-base font-normal leading-snug">
+            Mira en mapa
+          </span>
+        </p>
+      </section>
+      <br />
+
+      <div className="w-96 h-32 flex-col justify-start items-start gap-8 inline-flex">
+        <div className="self-stretch text-zinc-900 text-xl font-bold leading-normal">
+          Detalle de la vivienda
+        </div>
+        <div className="justify-start items-start gap-8 inline-flex">
+          <div className="justify-start items-start gap-8 flex">
+            <div className="flex-col justify-start items-start gap-8 inline-flex">
+              <div className="justify-center items-center gap-2.5 inline-flex">
+                <div className="w-4 h-4 relative" />
+                <div className="text-zinc-900 text-base font-normal leading-snug">
+                  315 m2
+                </div>
+              </div>
+              <div className="justify-center items-center gap-2.5 inline-flex">
+                <div className="w-4 h-4 relative">
+                  <div className="w-3.5 h-4 left-[1px] top-[-0.02px] absolute"></div>
+                </div>
+                <div className="text-zinc-900 text-base font-normal leading-snug">
+                  Piso 7
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start items-start gap-8 inline-flex">
+              <div className="justify-center items-center gap-2.5 inline-flex">
+                <div className="w-4 h-4 relative" />
+                <div className="text-zinc-900 text-base font-normal leading-snug">
+                  3 dormitorios
+                </div>
+              </div>
+              <div className="justify-center items-center gap-3 inline-flex">
+                <div className="w-4 h-4 relative">
+                  <div className="w-4 h-4 left-0 top-0 absolute"></div>
+                </div>
+                <div className="text-zinc-900 text-base font-normal leading-snug">
+                  Ascensor
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-center items-start gap-8 inline-flex">
+              <div className="justify-center items-center gap-2.5 inline-flex">
+                <div className="w-4 h-4 relative">
+                  <div className="w-3.5 h-4 left-[1px] top-0 absolute"></div>
+                </div>
+                <div className="text-zinc-900 text-base font-normal leading-snug">
+                  2 baños
+                </div>
+              </div>
+              <div className="justify-center items-center gap-3 inline-flex">
+                <div className="w-4 h-4 relative" />
+                <div className="text-zinc-900 text-base font-normal leading-snug">
+                  Amoblado
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex-col justify-start items-start gap-4 inline-flex">
+            <div className="justify-start items-start gap-8 inline-flex">
+              <div className="justify-center items-center gap-2 flex">
+                <div className="w-4 h-4 relative">
+                  <div className="w-4 h-3.5 left-[0.01px] top-[0.16px] absolute"></div>
+                </div>
+                <div className="text-zinc-900 text-base font-normal leading-snug">
+                  Cochera
+                </div>
+              </div>
+              <div className="justify-start items-start gap-2 flex">
+                <div className="w-4 h-4 relative">
+                  <div className="w-4 h-4 left-0 top-0 absolute"></div>
+                </div>
+                <div className="flex-col justify-start items-start gap-0.5 inline-flex">
+                  <div className="text-zinc-900 text-base font-normal leading-snug">
+                    12 años
+                  </div>
+                  <div className="text-slate-600 text-xs font-normal leading-3">
+                    Antigüedad
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="justify-center items-center gap-3 inline-flex">
+              <div className="w-4 h-4 relative" />
+              <div className="text-zinc-900 text-base font-normal leading-snug">
+                Otro
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <DetailInDetail
+          propertyInformation={detail?.property.propertyInformation}
+          propertyFloor={detail?.property.propertyAddress.floor}
+        />
       </section>
       <br />
 
       <section>
-        <DetailInDetail propertyInformation={detail?.property.propertyInformation} propertyFloor={detail?.property.propertyAddress.floor}/>
+        <OtherCharacteristics
+          propertyDetail={detail?.property.propertyDetail}
+        />
       </section>
       <br />
 
       <section>
-        <OtherCharacteristics propertyDetail={detail?.property.propertyDetail} />
-      </section>
-      <br />
-
-      <section>
-        <ServicesInDetail propertyInformation={detail?.property.propertyInformation} propertyFloor={detail?.property.propertyAddress.floor}/>
+        <ServicesInDetail
+          propertyInformation={detail?.property.propertyInformation}
+          propertyFloor={detail?.property.propertyAddress.floor}
+        />
       </section>
       <br />
 
