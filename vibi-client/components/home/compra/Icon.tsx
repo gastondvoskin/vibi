@@ -8,9 +8,9 @@ interface IconProps {
 
 const Icon: React.FC<IconProps> = ({img, text}) => {
   return (
-    <div className="flex flex-row justify-center items-center mx-3">
-      <Image src={img} alt="Area" />
-      <span className="ml-1">{text}</span>
+    <div className="py-1.5 rounded-full justify-start items-center gap-1.5 flex">
+      <Image src={img} alt="Area" className="w-3 h-3 relative"/>
+      <span className="text-blue-950 text-xs font-medium">{text}</span>
     </div>
   );
 };

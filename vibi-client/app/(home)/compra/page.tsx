@@ -4,7 +4,7 @@ import Filters from "../../../components/home/compra/Filters";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { getPublicationsAction } from "../../../redux/actions/publicationActions";
-import OlvidateDeBuscar from "../../../components/home/compra/OlvidateDeBuscar";
+
 
 export default function Compra() {
   const currentPublications = useAppSelector((state: any) => state.publication.publications);
@@ -18,9 +18,7 @@ export default function Compra() {
   
   return (
     <main className="max-w-[1280px]">
-
       <Filters />
-      <OlvidateDeBuscar />
       <CardsContainer />
     </main>
   );

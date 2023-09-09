@@ -7,24 +7,25 @@ import parkingIcon from "../../../assets/icons/Parking.svg";
 import Icon from "./Icon";
 import { PropertyInformation } from "../../../interfaces/detail/detail";
 
-
 interface IconProps {
   propertyInformation: PropertyInformation;
 }
 
-
-const IconsContainer:  React.FC<IconProps> = ({ propertyInformation }) => {
+const IconsContainer: React.FC<IconProps> = ({ propertyInformation }) => {
   return (
-    <div className="flex text-vibiGreyLight my-2">
-      <Icon img={areaIcon} text={`${propertyInformation.m2_indoor}m2`}/>
-      <Icon img={roomIcon} text={`${propertyInformation.rooms}`}/>
-      <Icon img={bathIcon} text={`${propertyInformation.baths}`}/>
-      <Icon img={parkingIcon} text={propertyInformation.garage === 0 ? "No" : "Sí"}/>
+    <div className="justify-center items-center gap-4 inline-flex">
+      
+        <Icon img={areaIcon} text={`${propertyInformation.m2_indoor}m2`} />
+        <Icon img={roomIcon} text={`${propertyInformation.rooms}`} />
+        <Icon img={bathIcon} text={`${propertyInformation.baths}`} />
+        <Icon
+          img={parkingIcon}
+          text={propertyInformation.garage === 0 ? "No" : "Sí"}
+        />
     </div>
   );
 };
 
 export default IconsContainer;
-
 
 // {propertyInformation.m2_indoor} ? <Icon img={areaIcon} text={`${propertyInformation.m2_indoor}m2`}/> : ""
