@@ -11,7 +11,7 @@ const CardsContainer = () => {
     <div className="w-[840px] grid grid-cols-3">
       {currentPublications?.map((publ: any, index: number) => {
         return (
-          <div>
+          <div key={index}>
             {index === 5 ? <OlvidateDeBuscar /> : ""}
             <Card
               key={index}

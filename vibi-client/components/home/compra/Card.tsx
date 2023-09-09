@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import IconsContainer from "./IconsContainer";
 import {
@@ -34,8 +33,9 @@ const Card = ({ property }: CardInterface) => {
                       {property.propertyAddress.city}.
                     </div>
                   </div>
-
-                  <IconsContainer propertyInformation={property.propertyInformation}/>
+                  <IconsContainer
+                    propertyInformation={property.propertyInformation}
+                  />
                 </div>
 
                 <div className="flex justify-center gap-3 items-center">
