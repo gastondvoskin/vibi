@@ -24,12 +24,12 @@ const CardsContainer = () => {
             }
           </div>
         );
-        <Card
-          property={currentPublications[5].property}
-          propertyAddress={currentPublications[5].propertyAddress}
-          propertyInformation={currentPublications[5].propertyInformation}
-        />
       })}
+      <Card
+        property={currentPublications[5].property}
+        propertyAddress={currentPublications[5].propertyAddress}
+        propertyInformation={currentPublications[5].propertyInformation}
+      />
     </div>
   );
 };
