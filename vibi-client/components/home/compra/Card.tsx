@@ -16,7 +16,7 @@ interface CardInterface {
 const Card = ({ property }: CardInterface) => {
   return (
     <Link href="/compra/detalle">
-      <div className="w-64 h-96 flex-col justify-start items-start inline-flex m-5 border border-slate-300 hover:border-rose-600">
+      <div className="w-64 h-[410px] flex-col justify-start items-start inline-flex m-5 border border-slate-300 hover:border-rose-600">
         <img className="w-64 h-52" src={property.urls_photos[0]} />
         <div className="h-44 px-4 pt-4 pb-6 flex-col justify-start items-start gap-3 flex">
           <div className="self-stretch justify-between items-start gap-3 inline-flex">

@@ -7,20 +7,28 @@ const CardsContainer = () => {
     (state: any) => state.publication.publications
   );
 
+  console.log('currentPublications: ', currentPublications[5].property);
   return (
     <div className="w-[840px] grid grid-cols-3">
       {currentPublications?.map((publ: any, index: number) => {
         return (
           <div key={index}>
-            {index === 5 ? <OlvidateDeBuscar /> : ""}
-            <Card
+            {index === 5 
+              ? <OlvidateDeBuscar /> 
+              : <Card
               key={index}
               property={publ.property}
               propertyAddress={publ.propertyAddress}
               propertyInformation={publ.propertyInformation}
-            />
+              />
+            }
           </div>
         );
+        <Card
+          property={currentPublications[5].property}
+          propertyAddress={currentPublications[5].propertyAddress}
+          propertyInformation={currentPublications[5].propertyInformation}
+        />
       })}
     </div>
   );
