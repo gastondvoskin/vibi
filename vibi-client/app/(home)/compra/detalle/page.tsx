@@ -25,11 +25,14 @@ const Detalle = () => {
     <div>
       <section>
         <img src={detail?.property.urls_photos[0]} alt="Photo" />
+        <div className="flex my-6 text-slate-600 text-xs font-normal">
+          <a href="/home" className="underline">Inicio </a>
+          <span className="">-</span>
+          <a href="/compra" className="underline">Compra</a>
+          <span className="">-</span>
+          <span className="font-bold">Detalle</span>
+        </div>
       </section>
-      <br />
-
-      <section>Links de Inicio - Compra - Filtros</section>
-      <br />
 
       <section>
         <p className="text-zinc-900 text-2xl font-semibold leading-normal">
