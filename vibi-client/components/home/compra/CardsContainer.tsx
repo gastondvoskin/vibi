@@ -7,7 +7,6 @@ const CardsContainer = () => {
     (state: any) => state.publication.publications
   );
 
-  console.log('currentPublications: ', currentPublications[5].property);
   return (
     <div className="w-[840px] grid grid-cols-3">
       {currentPublications?.map((publ: any, index: number) => {
@@ -25,11 +24,11 @@ const CardsContainer = () => {
           </div>
         );
       })}
-      <Card
-        property={currentPublications[5].property}
-        propertyAddress={currentPublications[5].propertyAddress}
-        propertyInformation={currentPublications[5].propertyInformation}
-      />
+      {/* <Card
+        property={currentPublications[5]?.property}
+        propertyAddress={currentPublications[5]?.propertyAddress}
+        propertyInformation={currentPublications[5]?.propertyInformation}
+      /> */}
     </div>
   );
 };
