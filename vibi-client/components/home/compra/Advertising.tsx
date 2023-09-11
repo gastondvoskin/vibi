@@ -1,5 +1,5 @@
 import Image from "next/image";
-import agenteVivi from "../../../assets/AgenteVivi.png";
+import agenteVivi from "../../../assets/agenteVivi.png";
 import check from "../../../assets/check-circle.png";
 import ButtonVariants from "../../commons/ButtonVariants";
 import {RiWhatsappFill} from "react-icons/ri"
