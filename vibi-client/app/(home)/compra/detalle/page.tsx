@@ -7,6 +7,7 @@ import OtherCharacteristics from "../../../../components/home/compra/OtherCharac
 import ServicesInDetail from "../../../../components/home/compra/ServicesInDetail";
 import GeneralDescription from "../../../../components/home/compra/GeneralDescription";
 import TourInDetail from "../../../../components/home/compra/TourInDetail";
+import Advertising from "../../../../components/home/compra/Advertising";
 
 const Detalle = () => {
   const [detail, setDetail] = useState<Publication | null>(null);
@@ -19,17 +20,21 @@ const Detalle = () => {
       .then((response) => response.data)
       .then((data) => setDetail(data));
   }, []);
-  console.log('aca', detail?.property.propertyDetail.air_conditioning);
-  // console.log(detail?.property.urls_photos);
-
+  // console.log("aca", detail?.property.propertyDetail.air_conditioning);
+  console.log(detail?.property.current_price);
+  console.log(detail?.property.previous_price);
   return (
     <div>
       <section>
         <img src={detail?.property.urls_photos[0]} alt="Photo" />
         <div className="flex my-6 text-slate-600 text-xs font-normal">
-          <a href="/home" className="underline">Inicio </a>
+          <a href="/home" className="underline">
+            Inicio{" "}
+          </a>
           <span className="">-</span>
-          <a href="/compra" className="underline">Compra</a>
+          <a href="/compra" className="underline">
+            Compra
+          </a>
           <span className="">-</span>
           <span className="font-bold">Detalle</span>
         </div>
@@ -53,24 +58,23 @@ const Detalle = () => {
         </p>
       </section>
 
-        <DetailInDetail
-          propertyInformation={detail?.property.propertyInformation}
-          propertyFloor={detail?.property.propertyAddress.floor}
-        />
+      <Advertising current_price={detail?.property.current_price} previous_price={detail?.property.previous_price}/>
 
-        <OtherCharacteristics
-          propertyDetail={detail?.property.propertyDetail}
-        />
+      <DetailInDetail
+        propertyInformation={detail?.property.propertyInformation}
+        propertyFloor={detail?.property.propertyAddress.floor}
+      />
 
-        <ServicesInDetail
-          air_conditioning={detail?.property.propertyDetail.air_conditioning}
-          natural_gas={detail?.property.propertyDetail.natural_gas}
-        />
+      <OtherCharacteristics propertyDetail={detail?.property.propertyDetail} />
+
+      <ServicesInDetail
+        air_conditioning={detail?.property.propertyDetail.air_conditioning}
+        natural_gas={detail?.property.propertyDetail.natural_gas}
+      />
 
       <TourInDetail />
 
-      <GeneralDescription description={detail?.property.description}/>
-
+      <GeneralDescription description={detail?.property.description} />
     </div>
   );
 };
