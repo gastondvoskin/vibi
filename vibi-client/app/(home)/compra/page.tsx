@@ -15,12 +15,12 @@ export default function Compra() {
 
   useEffect(() => {
     if (!currentPublications.length) {dispatch(getPublicationsAction(currentPage))}
-  }, [dispatch, currentPublications]);
+  }, [dispatch, currentPublications, currentPage]);
 
   const changePage = (page: number | "..." | ">") => {
     if(page === ">") {
       setCurrentPage(currentPage + 1);
-    } else if (page === "...") {}
+    } else if (page === "...") {console.log('Does not have any execution')}
     else {
       setCurrentPage(page);
     }
