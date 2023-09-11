@@ -10,17 +10,17 @@ import Floor from "../../../assets/icons/Floor.svg";
 
 const DetailInDetail = ({propertyInformation, propertyFloor}: any) => {
   return (
-    <div className="">
-        <h1 className="text-zinc-900 text-xl font-bold">Detalle de la vivienda</h1>
-        <div className="flex flex-wrap">
-            <Icon img={areaIcon} text={`${propertyInformation?.m2_indoor}m2`}/>
-            <Icon img={roomIcon} text={propertyInformation?.rooms === 1 ? `${propertyInformation?.rooms} habitación` : `${propertyInformation?.rooms} habitaciones`} />
-            <Icon img={bathIcon} text={propertyInformation?.baths === 1 ? `${propertyInformation?.baths} baño` : `${propertyInformation?.baths} baños`} />
-            <Icon img={areaIcon} text={`Antig: ${new Date().getFullYear() - propertyInformation?.construction_year}`}/>
-            <Icon img={parkingIcon} text={propertyInformation?.garage === 0 ? "" : "Cochera"}/>
-            {propertyFloor ? <Icon img={Floor} text={`Piso ${propertyFloor}`}/> : ""} 
-        </div>
-        <hr className="w-[700px]"/>
+    <div className="my-8">
+      <h1 className="text-zinc-900 text-xl font-bold">Detalle de la vivienda</h1>
+      <div className="flex flex-wrap">
+          <Icon img={areaIcon} text={`${propertyInformation?.m2_indoor}m2`}/>
+          <Icon img={roomIcon} text={propertyInformation?.rooms === 1 ? `${propertyInformation?.rooms} habitación` : `${propertyInformation?.rooms} habitaciones`} />
+          <Icon img={bathIcon} text={propertyInformation?.baths === 1 ? `${propertyInformation?.baths} baño` : `${propertyInformation?.baths} baños`} />
+          <Icon img={areaIcon} text={`Antigüedad: ${new Date().getFullYear() - propertyInformation?.construction_year}`}/>
+          <Icon img={parkingIcon} text={propertyInformation?.garage === 0 ? "" : "Cochera"}/>
+          {propertyFloor ? <Icon img={Floor} text={`Piso ${propertyFloor}`}/> : ""} 
+      </div>
+      <hr className="w-[700px]"/>
     </div>
   )
   
