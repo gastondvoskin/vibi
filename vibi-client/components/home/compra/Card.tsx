@@ -18,7 +18,7 @@ const Card = ({ property }: CardInterface) => {
   return (
     <Link href="/compra/detalle">
       <div className="w-64 h-[410px] flex-col justify-start items-start inline-flex m-5 border border-slate-300 hover:border-rose-600">
-        <Image className="w-64 h-52" src={property.urls_photos[0]} alt="Fotos"/>
+        <Image className="w-64 h-52" src={property.urls_photos[0]} alt="Fotos" width={256} height={208}/>
         <div className="h-44 px-4 pt-4 pb-6 flex-col justify-start items-start gap-3 flex">
           <div className="self-stretch justify-between items-start gap-3 inline-flex">
             <div className="grow shrink basis-0 flex-col justify-center items-start gap-6 inline-flex">
