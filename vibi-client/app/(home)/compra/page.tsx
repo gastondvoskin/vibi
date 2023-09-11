@@ -22,9 +22,6 @@ export default function Compra() {
       setCurrentPage(currentPage + 1);
     } else if (page === "...") {}
     else {
-      console.log('aquí')
-      console.log('page: ', page)
-      console.log('currentPage: ', currentPage)
       setCurrentPage(page);
     }
   }
