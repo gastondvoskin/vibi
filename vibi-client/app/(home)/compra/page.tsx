@@ -10,7 +10,6 @@ import Pagination from "../../../components/home/compra/Pagination";
 
 export default function Compra() {
   const currentPublications = useAppSelector((state: any) => state.publication.publications);
-  const filterState = useAppSelector((state:any) => state.filters);
   const [currentPage, setCurrentPage] = useState(1);
   const dispatch = useAppDispatch(); 
 
@@ -30,7 +29,6 @@ export default function Compra() {
   
   return (
     <main className="flex flex-row max-w-[1280px] ">
-      <h1>{filterState.propertyType}hola</h1>
       <div className="flex flex-col items-center">
         <Filters />
         <CardsContainer />
