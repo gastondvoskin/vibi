@@ -8,6 +8,11 @@ async function getRandomCity(): Promise<string> {
     return citiesInPeru[randomIndex];
   }
   
+  async function getRandomPropertyType(): Promise<string> {
+    const propertyTypes = ['Casa', 'Departamento'];
+    const randomIndex = Math.floor(Math.random() * propertyTypes.length);
+    return propertyTypes[randomIndex];
+  }
   async function createRandomPublication(userId: string, numberOfPublications: number): Promise<void> {
     try {
       for (let i = 0; i < numberOfPublications; i++) {
@@ -15,7 +20,7 @@ async function getRandomCity(): Promise<string> {
         const current_price = Math.floor(Math.random() * (500000 - 100000 + 1)) + 100000;
         const previous_price = Math.floor(current_price * 1.2); // Puedes ajustar el factor como desees.
         const rooms = Math.floor(Math.random() * 10) + 1; // Número de habitaciones entre 1 y 10
-  
+        const propertyType = await getRandomPropertyType();
         const newPropertyInformation = await prisma.propertyInformation.create({
           data: {
             construction_year: 2000, // Puedes establecer un año aleatorio si lo prefieres.
@@ -50,7 +55,7 @@ async function getRandomCity(): Promise<string> {
             city: randomCity,
             urbanization: 'Urbanización Aleatoria', // Puedes generar una urbanización aleatoria si lo deseas.
             floor: 2, // Puedes establecer un piso aleatorio si lo prefieres.
-            property_type: 'Casa', // Puedes generar un tipo aleatorio si lo deseas.
+            property_type: propertyType, // Puedes generar un tipo aleatorio si lo deseas.
           },
         });
   
