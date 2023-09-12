@@ -16,9 +16,17 @@ const Pagination = ({ numberOfPages, changePage, currentPage }: PaginationProps)
 
   return (
     <section className="w-80 h-10 mt-10 mb-40 justify-start items-start gap-4 inline-flex">
-        <PageButton currentPage={currentPage} page={1} changePage={changePage}/>
+        {arrayOfPages.map((page) => (
+        <PageButton
+          key={page}
+          currentPage={currentPage}
+          page={page}
+          changePage={changePage}
+        />
+      ))}
+        {/* <PageButton currentPage={currentPage} page={1} changePage={changePage}/>
         <PageButton currentPage={currentPage} page={2} changePage={changePage}/>
-        <PageButton currentPage={currentPage} page={3} changePage={changePage}/>
+        <PageButton currentPage={currentPage} page={3} changePage={changePage}/> */}
         {/* <PageButton currentPage={currentPage} page="..." changePage={changePage}/>
         <PageButton currentPage={currentPage} page={12} changePage={changePage}/>
         <PageButton currentPage={currentPage} page=">" changePage={changePage}/> */}

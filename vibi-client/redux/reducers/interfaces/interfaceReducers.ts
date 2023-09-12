@@ -4,6 +4,7 @@ import { FormPublication } from "./forms/publication"
 
 export interface PublicationReducer {
     publications: object[],
+    totalPages:number,
     form: {
         publication: FormPublication,
         propertyInformation: FormPropertyInformation
