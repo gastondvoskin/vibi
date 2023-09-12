@@ -6,7 +6,7 @@ import { CreatePublication, GET_PUBLICATIONS, GetPublicationsAction } from "./ac
 
 
 export const getPublicationsAction = (page:number) => {
-  console.log('page en action', page)
+/*   console.log('page en action', page) */
   const API_URL = `publication/?page=${page}`;
   
   return async (dispatch: Dispatch<GetPublicationsAction>) => {

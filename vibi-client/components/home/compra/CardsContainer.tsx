@@ -6,7 +6,7 @@ const CardsContainer = () => {
   const currentPublications = useSelector(
     (state: any) => state.publication.publications
   );
-
+/* console.log('currentPublications', currentPublications) */
   return (
     <div className="w-[840px] grid grid-cols-3">
       {currentPublications?.map((publ: any, index: number) => {
@@ -17,8 +17,7 @@ const CardsContainer = () => {
               : <Card
               key={index}
               property={publ.property}
-              propertyAddress={publ.propertyAddress}
-              propertyInformation={publ.propertyInformation}
+              publication_Id= {publ.publication_Id}
               />
             }
           </div>

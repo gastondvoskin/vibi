@@ -4,7 +4,7 @@ import FalseIcon from "../../../assets/icons/FalseIcon.svg";
 
 
 const OtherCharacteristics = ({propertyDetail}: any) => {
-  console.log('propertyDetail: ', propertyDetail);
+/*   console.log('propertyDetail: ', propertyDetail); */
   return (
     <div className="my-8">
       <h1 className="text-zinc-900 text-xl font-bold">Otras características</h1>
