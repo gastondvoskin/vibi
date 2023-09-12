@@ -14,9 +14,7 @@ export interface PublicationReducer {
 
 export interface FilterReducer {
     propertyType: string | null;
-    minRooms: number | null;
-    maxRooms: number | null;
-    minPrice: number | null;
+    rooms: number | null;
     maxPrice: number | null;
     city: string | null;
   }

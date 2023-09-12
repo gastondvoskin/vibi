@@ -10,12 +10,14 @@ import Pagination from "../../../components/home/compra/Pagination";
 
 export default function Compra() {
   const numberOfPages = useAppSelector((state: any) => state.publication.totalPages);
+  const filterState =  useAppSelector((state:any) => state.filters);
   const [currentPage, setCurrentPage] = useState(1);
   const dispatch = useAppDispatch(); 
-
+  console.log(filterState);
+  
   useEffect(() => {
-    dispatch(getPublicationsAction(currentPage))
-  }, [dispatch, currentPage]);
+    dispatch(getPublicationsAction(currentPage,filterState))
+  }, [dispatch, currentPage,filterState]);
 
   const changePage = (page: number | "..." | ">") => {
     if(page === ">") {

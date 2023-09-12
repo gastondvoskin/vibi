@@ -124,7 +124,7 @@ export class PublicationController {
 
   async getPublications(req: Request, res: Response) {
     try {
-      const { propertyType, minRooms, maxRooms, minPrice, maxPrice,city, page } = req.query;
+      const { propertyType, rooms , maxPrice,city, page } = req.query;
       
       // Define el número de resultados por página
      const resultsPerPage = 10;
@@ -139,15 +139,15 @@ export class PublicationController {
         conditions.propertyAddress = { property_type: propertyType };
       }
   
-      if (minRooms || maxRooms) {
+      if (rooms) {
         conditions.propertyInformation = {};
-        if (minRooms) conditions.propertyInformation.rooms = { gte: parseInt(minRooms as string) };
-        if (maxRooms) conditions.propertyInformation.rooms = { ...conditions.propertyInformation.rooms, lte: parseInt(maxRooms as string) };
+        conditions.propertyInformation.rooms = {equals: parseInt(rooms as string) };
+        // if (minRooms) conditions.propertyInformation.rooms = { gte: parseInt(minRooms as string) };
+        // if (maxRooms) conditions.propertyInformation.rooms = { ...conditions.propertyInformation.rooms, lte: parseInt(maxRooms as string) };
       }
   
-      if (minPrice || maxPrice) {
+      if ( maxPrice) {
         conditions.property = {};
-        if (minPrice) conditions.property.current_price = { gte: parseInt(minPrice as string) };
         if (maxPrice) conditions.property.current_price = { ...conditions.property.current_price, lte: parseInt(maxPrice as string) };
       }
 

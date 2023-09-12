@@ -50,7 +50,7 @@ async function getRandomCity(): Promise<string> {
             city: randomCity,
             urbanization: 'Urbanización Aleatoria', // Puedes generar una urbanización aleatoria si lo deseas.
             floor: 2, // Puedes establecer un piso aleatorio si lo prefieres.
-            property_type: 'casa', // Puedes generar un tipo aleatorio si lo deseas.
+            property_type: 'Casa', // Puedes generar un tipo aleatorio si lo deseas.
           },
         });
   

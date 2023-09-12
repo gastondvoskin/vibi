@@ -1,28 +1,13 @@
 // filterActions.ts
 
-export const setPropertyTypeFilter = (propertyType: string | null) => (
-    
-    {
+export const setPropertyTypeFilter = (propertyType: string | null) => ({
     type: "SET_PROPERTY_TYPE_FILTER",
     payload: propertyType,
-  }
-  
-  
-  );
-  
-  export const setMinRoomsFilter = (minRooms: number | null) => ({
-    type: "SET_MIN_ROOMS_FILTER",
-    payload: minRooms,
   });
   
-export const setMaxRoomsFilter = (maxRooms: number | null) => ({
-    type: "SET_MAX_ROOMS_FILTER",
-    payload: maxRooms,
-  });
-  
-  export const setMinPriceFilter = (minPrice: number | null) => ({
-    type: "SET_MIN_PRICE_FILTER",
-    payload: minPrice,
+  export const setRoomsFilter = (rooms: number | null) => ({
+    type: "SET_ROOMS_FILTER",
+    payload: rooms,
   });
   
   export const setMaxPriceFilter = (maxPrice: number | null) => ({

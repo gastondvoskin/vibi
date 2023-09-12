@@ -2,9 +2,7 @@ import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import {
   setPropertyTypeFilter,
-  setMinRoomsFilter,
-  setMaxRoomsFilter,
-  setMinPriceFilter,
+  setRoomsFilter,
   setMaxPriceFilter,
   setCityFilter
 } from "../../../redux/actions/filterActions"
@@ -13,33 +11,29 @@ import {
 interface SelectFilterProps {
   label: string;
   options: (string | number)[];
+  filter:string
 }
 
-const SelectFilter: React.FC<SelectFilterProps> = ({ label, options }) => {
+const SelectFilter: React.FC<SelectFilterProps> = ({ label, options,filter}) => {
   const dispatch = useAppDispatch();
   const filterState = useAppSelector((state:any) => state.filters);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
 
-    // Determina qué filtro estás actualizando según el nombre del select
+ 
     switch (name) {
       case "propertyType":
         console.log(name,value);
         
         dispatch(setPropertyTypeFilter(value));
         break;
-      case "minRooms":
-        dispatch(setMinRoomsFilter(Number(value)));
-        break;
-      case "maxRooms":
-        dispatch(setMaxRoomsFilter(Number(value)));
-        break;
-      case "minPrice":
-        dispatch(setMinPriceFilter(Number(value)));
+      case "rooms":
+        dispatch(setRoomsFilter(Number(value)));
         break;
       case "maxPrice":
         dispatch(setMaxPriceFilter(Number(value)));
+        console.log("maxPrice", value,name);
         break;
       case "city":
         dispatch(setCityFilter(value));
@@ -49,21 +43,23 @@ const SelectFilter: React.FC<SelectFilterProps> = ({ label, options }) => {
         
         break;
     }
+    console.log(filterState);
+    
   };
 
   return (
     <select
       className="flex border w-auto h-10 mx-1 rounded"
-      name={label}
+      name={filter}
       id={label}
       onChange={handleChange}
-      value={filterState[label] || ""
+      value={filterState[filter] || ""
       } 
     >
-      <option value="">{label}</option>
+      <option disabled hidden value="">{label}</option>
       {options.map((opt, index) => (
         <option key={index} value={opt}>
-          {opt}
+          {filter === "maxPrice" && "$"}{opt}
         </option>
       ))}
     </select>
