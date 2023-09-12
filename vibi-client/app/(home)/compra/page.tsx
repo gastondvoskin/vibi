@@ -24,7 +24,7 @@ export default function Compra() {
     else {
       setCurrentPage(page);
     }
-    console.log('currentPage', currentPage)
+   /*  console.log('currentPage', currentPage) */
   }
   
   

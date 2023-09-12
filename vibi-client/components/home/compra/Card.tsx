@@ -3,20 +3,17 @@ import Link from "next/link";
 import IconsContainer from "./IconsContainer";
 import {
   Property,
-  PropertyAddress,
-  PropertyInformation,
 } from "../../../interfaces/detail/detail";
 import Image from "next/image";
 
 interface CardInterface {
   property: Property;
-  propertyAddress: PropertyAddress;
-  propertyInformation: PropertyInformation;
+  publication_Id: string
 }
 
-const Card = ({ property }: CardInterface) => {
+const Card = ({ property, publication_Id }: CardInterface) => {
   return (
-    <Link href="/compra/detalle">
+    <Link href={`/compra/detalle/${publication_Id}`}>
       <div className="w-64 h-[410px] flex-col justify-start items-start inline-flex m-5 border border-slate-300 hover:border-rose-600">
         <Image className="w-64 h-52" src={property.urls_photos[0]} alt="Fotos" width={256} height={208}/>
         <div className="h-44 px-4 pt-4 pb-6 flex-col justify-start items-start gap-3 flex">
