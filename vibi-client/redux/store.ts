@@ -1,15 +1,15 @@
 import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-
-
 import { combineReducers } from 'redux';
 import publicationReducer from './reducers/publicationReducer';
 import userReducer from './reducers/userReducer';
+import filterReducer from './reducers/filtersReducer';
 
 
 const rootReducer = combineReducers({
   publication: publicationReducer, 
-  user: userReducer
+  user: userReducer,
+  filters: filterReducer
 
 });
 

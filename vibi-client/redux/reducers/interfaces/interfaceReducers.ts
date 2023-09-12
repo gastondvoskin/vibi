@@ -10,3 +10,12 @@ export interface PublicationReducer {
         property: FormProperty
        }
 }
+
+export interface FilterReducer {
+    propertyType: string | null;
+    minRooms: number | null;
+    maxRooms: number | null;
+    minPrice: number | null;
+    maxPrice: number | null;
+    city: string | null;
+  }
