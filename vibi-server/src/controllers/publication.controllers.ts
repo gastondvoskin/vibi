@@ -198,7 +198,9 @@ export class PublicationController {
       });
       
       if (!filteredProperties.length){
-        return res.status(200).send("There are no results");
+        return res.status(200).json({
+          publications:[]
+        });
       }
 
       const response: any = {

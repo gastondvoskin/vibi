@@ -6,6 +6,12 @@ const CardsContainer = () => {
   const currentPublications = useSelector(
     (state: any) => state.publication.publications
   );
+
+  if(!currentPublications.length){
+    return (
+      <h1>no hay resultados</h1>
+    )
+  }
 /* console.log('currentPublications', currentPublications) */
   return (
     <div className="w-[840px] grid grid-cols-3">

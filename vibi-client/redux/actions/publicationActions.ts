@@ -41,7 +41,7 @@ export const getPublicationsAction = (page:number,filters:FilterReducer) => {
       const publications = response.data;
       dispatch({
         type: GET_PUBLICATIONS,
-        payload: publications,
+        payload:publications,
       });
     } catch (error: any) {
       console.log(error.message);
