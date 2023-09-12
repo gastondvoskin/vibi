@@ -9,7 +9,7 @@ export const CREATE_PUBLICATION = "CREATE_PUBLICATION";
 
 export interface GetPublicationsAction {
   type: 'GET_PUBLICATIONS';
-  payload: {publications: [], totalPages: number};  
+  payload: {publications: [], totalPages: number | undefined};  
 }
 export interface CreatePublication {
   type: 'CREATE_PUBLICATION',

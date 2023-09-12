@@ -1,11 +1,12 @@
 import { Dispatch } from 'redux';
 import instance from "../../utils/axiosconfig";
 import { CreatePublication, GET_PUBLICATIONS, GetPublicationsAction } from "./actions-types-publication";
-import axios from 'axios';
+
 
 
 
 export const getPublicationsAction = (page:number) => {
+  console.log('page en action', page)
   const API_URL = `publication/?page=${page}`;
   
   return async (dispatch: Dispatch<GetPublicationsAction>) => {
@@ -15,7 +16,7 @@ export const getPublicationsAction = (page:number) => {
       const publications = response.data;
       dispatch({
         type: GET_PUBLICATIONS,
-        payload: publications.publications,
+        payload: publications,
       });
     } catch (error: any) {
       console.log(error.message);

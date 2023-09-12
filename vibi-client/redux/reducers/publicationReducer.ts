@@ -5,6 +5,7 @@ import { PublicationReducer } from "./interfaces/interfaceReducers";
 
 const initialState : PublicationReducer = {
   publications: [],
+  totalPages:0,
   form:{
     property:{
       condition:"",
@@ -38,8 +39,10 @@ const initialState : PublicationReducer = {
 const publicationReducer = (state = initialState, action: publicationActions) => {
   switch (action.type) {
     case GET_PUBLICATIONS: {
-      const publications = action.payload;
-      return {...state, publications};
+      const publications = action.payload.publications;
+      const totalPages = action.payload.totalPages
+      const newState = totalPages? {...state, publications, totalPages} : {...state, publications}
+      return newState;
     }
     case CREATE_PUBLICATION: {
       const form = action.payload
