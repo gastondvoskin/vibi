@@ -29,7 +29,8 @@ const Pagination = ({ numberOfPages, changePage, currentPage }: PaginationProps)
         <PageButton currentPage={currentPage} page={3} changePage={changePage}/> */}
         {/* <PageButton currentPage={currentPage} page="..." changePage={changePage}/>
         <PageButton currentPage={currentPage} page={12} changePage={changePage}/>
-        <PageButton currentPage={currentPage} page=">" changePage={changePage}/> */}
+        */}
+         <PageButton currentPage={currentPage} page=">" changePage={changePage}/>
     </section>
   );
 };

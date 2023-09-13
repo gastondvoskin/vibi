@@ -1,9 +1,9 @@
 'use client'
 import CardsContainer from "../../../components/home/compra/CardsContainer";
 import Filters from "../../../components/home/compra/Filters";
-import { useEffect, useState } from "react";
+import { useEffect/* , useState */ } from "react";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
-import { getPublicationsAction } from "../../../redux/actions/publicationActions";
+import { getPublicationsAction, setCurrentPageAction } from "../../../redux/actions/publicationActions";
 import Image from 'next/image';
 import mapImage from "../../../assets/mapImage.png";
 import Pagination from "../../../components/home/compra/Pagination";
@@ -12,20 +12,21 @@ export default function Compra() {
   const numberOfPages = useAppSelector((state: any) => state.publication.totalPages);
   const filterState =  useAppSelector((state:any) => state.filters);
   const publications =  useAppSelector((state:any) => state.publication);
-  const [currentPage, setCurrentPage] = useState(1);
+  const currentPage = useAppSelector((state:any) => state.publication.currentPage)
+/*   const [currentPage, setCurrentPage] = useState(1); */
   const dispatch = useAppDispatch(); 
-  console.log(filterState);
-  
+/*   console.log(filterState); */
+console.log('Current Page', currentPage)
   useEffect(() => {
     dispatch(getPublicationsAction(currentPage,filterState))
   }, [dispatch, currentPage,filterState]);
 
   const changePage = (page: number | "..." | ">") => {
     if(page === ">") {
-      setCurrentPage(currentPage + 1);
+      dispatch( setCurrentPageAction(currentPage + 1));
     } else if (page === "...") {console.log('Does not have any execution')}
     else {
-      setCurrentPage(page);
+      dispatch( setCurrentPageAction(page));
     }
    /*  console.log('currentPage', currentPage) */
   }

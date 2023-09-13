@@ -6,6 +6,7 @@ import {
   setMaxPriceFilter,
   setCityFilter
 } from "../../../redux/actions/filterActions"
+import { setCurrentPageAction } from "../../../redux/actions/publicationActions";
 
 
 interface SelectFilterProps {
@@ -19,6 +20,7 @@ const SelectFilter: React.FC<SelectFilterProps> = ({ label, options,filter}) => 
   const filterState = useAppSelector((state:any) => state.filters);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(setCurrentPageAction(1))
     const { name, value } = e.target;
 
  

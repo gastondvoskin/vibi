@@ -1,11 +1,12 @@
 
-import { CREATE_PUBLICATION, GET_PUBLICATIONS } from "../actions/actions-types-publication";
+import { CREATE_PUBLICATION, GET_PUBLICATIONS, SET_CURRENTPAGE } from "../actions/actions-types-publication";
 import { publicationActions } from "../actions/publicationActions";
 import { PublicationReducer } from "./interfaces/interfaceReducers";
 
 const initialState : PublicationReducer = {
   publications: [],
   totalPages:0,
+  currentPage:1,
   form:{
     property:{
       condition:"",
@@ -48,7 +49,10 @@ const publicationReducer = (state = initialState, action: publicationActions) =>
       const form = action.payload
       return {...state, form}
     } 
-
+    case SET_CURRENTPAGE: {
+      const currentPage = action.payload
+      return { ...state, currentPage}
+    }
     default:
       return {
         ...state,

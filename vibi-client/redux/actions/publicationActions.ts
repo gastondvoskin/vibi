@@ -1,10 +1,15 @@
 import { Dispatch } from 'redux';
 import instance from "../../utils/axiosconfig";
-import { CreatePublication, GET_PUBLICATIONS, GetPublicationsAction } from "./actions-types-publication";
+import { CreatePublication, GET_PUBLICATIONS, GetPublicationsAction, SET_CURRENTPAGE, SetCurrentPage } from "./actions-types-publication";
 import { FilterReducer } from '../reducers/interfaces/interfaceReducers';
 
 
-
+ export const setCurrentPageAction  = ( currentPage:number) => {
+  return {
+    type: SET_CURRENTPAGE,
+    payload:currentPage,
+  };
+ }  
 
 export const getPublicationsAction = (page:number,filters:FilterReducer) => {
   const { city, maxPrice, propertyType, rooms } = filters;
@@ -50,4 +55,4 @@ export const getPublicationsAction = (page:number,filters:FilterReducer) => {
 };
 
 
-export type publicationActions = GetPublicationsAction | CreatePublication
+export type publicationActions = GetPublicationsAction | CreatePublication | SetCurrentPage
