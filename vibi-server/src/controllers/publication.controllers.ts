@@ -127,7 +127,7 @@ export class PublicationController {
       const { propertyType, rooms , maxPrice,city, page } = req.query;
       
       // Define el número de resultados por página
-     const resultsPerPage = 10;
+     const resultsPerPage = 9;
 
       // Calcula el desplazamiento en función de la página solicitada
     const offset = (Number(page) - 1) * resultsPerPage;
