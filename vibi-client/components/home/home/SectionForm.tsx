@@ -6,6 +6,7 @@ import Form from "./SectionForm/Form";
 import Type from "./common/Type";
 const SectionForm = () => {
     const [form, setForm] = useState({
+        propertyType:'',
         department: '',
         district: '',
         budget: '',
@@ -16,6 +17,7 @@ const SectionForm = () => {
 
     const clearForm = () => {
         setForm({
+            propertyType:'',
             department: '',
             district: '',
             budget: '',
