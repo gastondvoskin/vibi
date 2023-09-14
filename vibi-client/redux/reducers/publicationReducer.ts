@@ -41,8 +41,12 @@ const publicationReducer = (state = initialState, action: publicationActions) =>
   switch (action.type) {
     case GET_PUBLICATIONS: {
       const publications = action.payload.publications;
-      const totalPages = action.payload.totalPages
+      const totalPages = action.payload.totalPages;
+      console.log(totalPages);
+      
       const newState = totalPages? {...state, publications, totalPages} : {...state, publications}
+      console.log(newState);
+      
       return newState;
     }
     case CREATE_PUBLICATION: {

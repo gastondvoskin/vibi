@@ -1,17 +1,502 @@
 export const departmentsPeru = [
   {
+    value: "abancay",
+    label: "Abancay",
+  },
+  {
+    value: "acomayo",
+    label: "Acomayo",
+  },
+  {
+    value: "aija",
+    label: "Aija",
+  },
+  {
+    value: "alto Amazonas",
+    label: "Alto Amazonas",
+  },
+  {
+    value: "ambo",
+    label: "Ambo",
+  },
+  {
+    value: "andahuaylas",
+    label: "Andahuaylas",
+  },
+  {
+    value: "anta",
+    label: "Anta",
+  },
+  {
+    value: "antabamba",
+    label: "Antabamba",
+  },
+  {
+    value: "antonio Raymondi",
+    label: "Antonio Raymondi",
+  },
+  {
+    value: "ascope",
+    label: "Ascope",
+  },
+  {
+    value: "asunción",
+    label: "Asunción",
+  },
+  {
+    value: "bagua",
+    label: "Bagua",
+  },
+  {
+    value: "barranca",
+    label: "Barranca",
+  },
+  {
+    value: "bolognesi",
+    label: "Bolognesi",
+  },
+  {
+    value: "bolívar",
+    label: "Bolívar",
+  },
+  {
+    value: "bongará",
+    label: "Bongará",
+  },
+  {
+    value: "cajabamba",
+    label: "Cajabamba",
+  },
+  {
+    value: "cajamarca",
+    label: "Cajamarca",
+  },
+  {
+    value: "cajatambo",
+    label: "Cajatambo",
+  },
+  {
+    value: "calca",
+    label: "Calca",
+  },
+  {
+    value: "camaná",
+    label: "Camaná",
+  },
+  {
+    value: "canas",
+    label: "Canas",
+  },
+  {
+    value: "cangallo",
+    label: "Cangallo",
+  },
+  {
+    value: "canta",
+    label: "Canta",
+  },
+  {
+    value: "caravelí",
+    label: "Caravelí",
+  },
+  {
+    value: "carlos Fermín Fitzcarrald",
+    label: "Carlos Fermín Fitzcarrald",
+  },
+  {
+    value: "castilla",
+    label: "Castilla",
+  },
+  {
+    value: "castrovirreyna",
+    label: "Castrovirreyna",
+  },
+  {
+    value: "caylloma",
+    label: "Caylloma",
+  },
+  {
+    value: "celendín",
+    label: "Celendín",
+  },
+  {
+    value: "chepén",
+    label: "Chepén",
+  },
+  {
+    value: "chiclayo",
+    label: "Chiclayo",
+  },
+  {
+    value: "chimbote",
+    label: "Chimbote",
+  },
+  {
+    value: "chincha",
+    label: "Chincha",
+  },
+  {
+    value: "chincheros",
+    label: "Chincheros",
+  },
+  {
+    value: "chota",
+    label: "Chota",
+  },
+  {
+    value: "chumbivilcas",
+    label: "Chumbivilcas",
+  },
+  {
+    value: "concepción",
+    label: "Concepción",
+  },
+  {
+    value: "condesuyos",
+    label: "Condesuyos",
+  },
+  {
+    value: "contumazá",
+    label: "Contumazá",
+  },
+  {
+    value: "corongo",
+    label: "Corongo",
+  },
+  {
+    value: "cotabambas",
+    label: "Cotabambas",
+  },
+  {
+    value: "cusco",
+    label: "Cusco",
+  },
+  {
+    value: "cutervo",
+    label: "Cutervo",
+  },
+  {
+    value: "datem del Marañón",
+    label: "Datem del Marañón",
+  },
+  {
+    value: "dos de Mayo",
+    label: "Dos de Mayo",
+  },
+  {
+    value: "espinar",
+    label: "Espinar",
+  },
+  {
+    value: "ferreñafe",
+    label: "Ferreñafe",
+  },
+  {
+    value: "grau",
+    label: "Grau",
+  },
+  {
+    value: "gran Chimú",
+    label: "Gran Chimú",
+  },
+  {
+    value: "huaral",
+    label: "Huaral",
+  },
+  {
+    value: "huaraz",
+    label: "Huaraz",
+  },
+  {
+    value: "huarmey",
+    label: "Huarmey",
+  },
+  {
+    value: "huamalíes",
+    label: "Huamalíes",
+  },
+  {
+    value: "huamanga",
+    label: "Huamanga",
+  },
+  {
+    value: "huancavelica",
+    label: "Huancavelica",
+  },
+  {
+    value: "huanta",
+    label: "Huanta",
+  },
+  {
+    value: "huánuco",
+    label: "Huánuco",
+  },
+  {
+    value: "huaylas",
+    label: "Huaylas",
+  },
+  {
+    value: "hualgayoc",
+    label: "Hualgayoc",
+  },
+  {
+    value: "huancayo",
+    label: "Huancayo",
+  },
+  {
+    value: "huarochirí",
+    label: "Huarochirí",
+  },
+  {
+    value: "huaytará",
+    label: "Huaytará",
+  },
+  {
+    value: "ica",
+    label: "Ica",
+  },
+  {
+    value: "islay",
+    label: "Islay",
+  },
+  {
+    value: "jauja",
+    label: "Jauja",
+  },
+  {
+    value: "julcán",
+    label: "Julcán",
+  },
+  {
+    value: "junín",
+    label: "Junín",
+  },
+  {
+    value: "la Convención",
+    label: "La Convención",
+  },
+  {
+    value: "la Mar",
+    label: "La Mar",
+  },
+  {
+    value: "la Uniòn",
+    label: "La Uniòn",
+  },
+  {
+    value: "lambayeque",
+    label: "Lambayeque",
+  },
+  {
+    value: "lauricocha",
+    label: "Lauricocha",
+  },
+  {
+    value: "leoncio Prado",
+    label: "Leoncio Prado",
+  },
+  {
     value: "lima",
     label: "Lima",
   },
   {
-    value: "ancash",
-    label: "Ancash",
+    value: "loreto",
+    label: "Loreto",
   },
   {
-    value: "amazonas",
-    label: "Amazonas",
+    value: "lucanas",
+    label: "Lucanas",
+  },
+  {
+    value: "luya",
+    label: "Luya",
+  },
+  {
+    value: "marañón",
+    label: "Marañón",
+  },
+  {
+    value: "mariscal Luzuriaga",
+    label: "Mariscal Luzuriaga",
+  },
+  {
+    value: "mariscal Ramón Castilla",
+    label: "Mariscal Ramón Castilla",
+  },
+  {
+    value: "maynas",
+    label: "Maynas",
+  },
+  {
+    value: "morropon",
+    label: "Morropon",
+  },
+  {
+    value: "nazca",
+    label: "Nazca",
+  },
+  {
+    value: "ocros",
+    label: "Ocros",
+  },
+  {
+    value: "pachitea",
+    label: "Pachitea",
+  },
+  {
+    value: "pallasca",
+    label: "Pallasca",
+  },
+  {
+    value: "palpa",
+    label: "Palpa",
+  },
+  {
+    value: "parinacochas",
+    label: "Parinacochas",
+  },
+  {
+    value: "pàucar del Sara Sara",
+    label: "Pàucar del Sara Sara",
+  },
+  {
+    value: "pacasmayo",
+    label: "Pacasmayo",
+  },
+  {
+    value: "paucartambo",
+    label: "Paucartambo",
+  },
+  {
+    value: "pataz",
+    label: "Pataz",
+  },
+  {
+    value: "pisco",
+    label: "Pisco",
+  },
+  {
+    value: "prov. Const. del Callao",
+    label: "Prov. Const. del Callao",
+  },
+  {
+    value: "puerto Inca",
+    label: "Puerto Inca",
+  },
+  {
+    value: "pomabamba",
+    label: "Pomabamba",
+  },
+  {
+    value: "putumayo",
+    label: "Putumayo",
+  },
+  {
+    value: "quispicanchi",
+    label: "Quispicanchi",
+  },
+  {
+    value: "recuay",
+    label: "Recuay",
+  },
+  {
+    value: "requena",
+    label: "Requena",
+  },
+  {
+    value: "rodríguez de Mendoza",
+    label: "Rodríguez de Mendoza",
+  },
+  {
+    value: "san Ignacio",
+    label: "San Ignacio",
+  },
+  {
+    value: "san Marcos",
+    label: "San Marcos",
+  },
+  {
+    value: "san Miguel",
+    label: "San Miguel",
+  },
+  {
+    value: "san Pablo",
+    label: "San Pablo",
+  },
+  {
+    value: "santa",
+    label: "Santa",
+  },
+  {
+    value: "santa Cruz",
+    label: "Santa Cruz",
+  },
+  {
+    value: "santiago de Chuco",
+    label: "Santiago de Chuco",
+  },
+  {
+    value: "sihuas",
+    label: "Sihuas",
+  },
+  {
+    value: "sucre",
+    label: "Sucre",
+  },
+  {
+    value: "tambopata",
+    label: "Tambopata",
+  },
+  {
+    value: "tarma",
+    label: "Tarma",
+  },
+  {
+    value: "tayacaja",
+    label: "Tayacaja",
+  },
+  {
+    value: "trujillo",
+    label: "Trujillo",
+  },
+  {
+    value: "ucayali",
+    label: "Ucayali",
+  },
+  {
+    value: "utcubamba",
+    label: "Utcubamba",
+  },
+  {
+    value: "víctor Fajardo",
+    label: "Víctor Fajardo",
+  },
+  {
+    value: "vilcas Huamán",
+    label: "Vilcas Huamán",
+  },
+  {
+    value: "virú",
+    label: "Virú",
+  },
+  {
+    value: "yarowilca",
+    label: "Yarowilca",
+  },
+  {
+    value: "yauli",
+    label: "Yauli",
+  },
+  {
+    value: "yauyos",
+    label: "Yauyos",
+  },
+  {
+    value: "yungay",
+    label: "Yungay",
   },
 ];
+
 
 export const districts = [
   {
@@ -140,34 +625,45 @@ export const districts = [
 
 export const budgets = [
   {
-    value: "100,000",
-    label: "100,000",
+    value: "100000",
+    label: "100000",
   },
   {
-    value: "200,000",
-    label: "200,000",
+    value: "200000",
+    label: "200000",
   },
   {
-    value: "300,000",
-    label: "300,000",
+    value: "300000",
+    label: "300000",
   },
   {
-    value: "400,000",
-    label: "400,000",
+    value: "400000",
+    label: "400000",
   },
   {
-    value: "500,000",
-    label: "500,000",
+    value: "500000",
+    label: "500000",
   },
   {
-    value: "600,000",
-    label: "600,000",
+    value: "600000",
+    label: "600000",
   },
   {
-    value: "700,000",
-    label: "700,000",
+    value: "7000000",
+    label: "7000000",
   },
 ];
+
+export const propertyOptions =[
+  {
+    value: "casa",
+    label: "Casa",
+  },
+  {
+    value: "departamento",
+    label: "Departamento",
+  }
+]
 export const roomsOptions = [
   {
     value: "1",
