@@ -9,7 +9,12 @@ const CardsContainer = () => {
 
   if(!currentPublications.length){
     return (
-      <h1>no hay resultados</h1>
+      <h1>Cargando...</h1>
+    )
+  }
+  else if (currentPublications==='no results'){
+    return (
+      <h1>No hay resultados</h1>
     )
   }
 /* console.log('currentPublications', currentPublications) */
