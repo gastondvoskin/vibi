@@ -199,7 +199,7 @@ export class PublicationController {
       
       if (!filteredProperties.length){
         return res.status(200).json({
-          publications:[]
+          publications:'no results'
         });
       }
 
