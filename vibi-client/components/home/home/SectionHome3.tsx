@@ -1,3 +1,5 @@
+"use client";
+
 import ButtonVariants from "../../commons/ButtonVariants";
 
 const SectionHome3 = () => {
@@ -20,10 +22,10 @@ const SectionHome3 = () => {
                             ¡Listo! Sin intermediarios y garantía.
                         </p>
                     </div>
-                    <div className="flex flex-col items-start gap-4">
-                        <ButtonVariants text="Ver propiedades para alquilar" border bgColor="bg-primary" txColor="text-white" width="w-[75%]" />
-                        <ButtonVariants text="Quiero saber más" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[75%]" />
-                    </div>
+                    {/* <div className="flex flex-col items-start gap-4">
+                        <ButtonVariants text="Ver propiedades para alquilar" border bgColor="bg-primary" txColor="text-white" width="w-[75%]" onClick={() => alert("Próximamente")}/>
+                        <ButtonVariants text="Quiero saber más" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[75%]" onClick={() => alert("Próximamente")} />
+                    </div> */}
                 </div>
             </div>
         </div>

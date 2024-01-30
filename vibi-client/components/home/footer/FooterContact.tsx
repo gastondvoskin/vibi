@@ -10,7 +10,7 @@ export default function FooterContact() {
         <div className="mr-2">
           <HiOutlineMail />
         </div>
-        <span>Info@altoque.com</span>
+        <span>info@vibi.com</span>
       </div>
       <div className="flex items-center">
         <div className="mr-2">

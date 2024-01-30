@@ -16,7 +16,7 @@ export default function Compra() {
 /*   const [currentPage, setCurrentPage] = useState(1); */
   const dispatch = useAppDispatch(); 
 /*   console.log(filterState); */
-console.log('Current Page', currentPage)
+// console.log('Current Page', currentPage)
   useEffect(() => {
     dispatch(getPublicationsAction(currentPage,filterState))
   }, [dispatch, currentPage,filterState]);
@@ -30,7 +30,7 @@ console.log('Current Page', currentPage)
     }
    /*  console.log('currentPage', currentPage) */
   }
-  console.log("publications State:",publications);
+  // console.log("publications State:",publications);
   
 
   return (

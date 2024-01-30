@@ -42,10 +42,10 @@ const publicationReducer = (state = initialState, action: publicationActions) =>
     case GET_PUBLICATIONS: {
       const publications = action.payload.publications;
       const totalPages = action.payload.totalPages;
-      console.log(totalPages);
+      // console.log(totalPages);
       
       const newState = totalPages? {...state, publications, totalPages} : {...state, publications}
-      console.log(newState);
+      // console.log(newState);
       
       return newState;
     }

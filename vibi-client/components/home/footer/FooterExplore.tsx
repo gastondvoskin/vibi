@@ -6,7 +6,7 @@ export default function FooterExplore() {
     <section className="h-36 w-56 mr-10 mb-20">
       <p className="font-semibold h-5 mb-2">Explora</p>
       <FooterButton name="¿Cómo comprar?" route="/home" />
-      <FooterButton name="Comprar" route="/compra" />
+      <FooterButton name="Compra" route="/compra" />
       <FooterButton name="Vende" route="/vende" />
       <FooterButton name="Nuestros servicios" route="/servicios" />
       </section>

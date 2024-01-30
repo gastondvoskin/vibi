@@ -23,10 +23,10 @@ const SectionHome5 = () => {
                             ¡Listo! Sin intermediarios y garantía.
                         </p>
                     </div>
-                    <div className="flex flex-col items-start gap-4">
+                    {/* <div className="flex flex-col items-start gap-4">
                         <ButtonVariants text="Ver propiedades para alquilar" border bgColor="bg-primary" txColor="text-white" width="w-[75%]" />
                         <ButtonVariants text="Quiero saber más" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[75%]" />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

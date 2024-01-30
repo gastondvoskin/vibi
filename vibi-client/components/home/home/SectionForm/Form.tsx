@@ -45,8 +45,8 @@ const Form = ({ form, handleChangeForm, buy, handleChangeDepartment }: FormProps
     const departamentConverted = capitalizeFirstLetter(form.department);
       
     const handleSubmmit = (e: React.FormEvent<HTMLFormElement>) => {
-        console.log(form);
-        console.log(propertyOptions);
+        // console.log(form);
+        // console.log(propertyOptions);
         
         e.preventDefault()
         dispatch(setCityFilter(departamentConverted))

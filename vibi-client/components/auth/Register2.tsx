@@ -44,7 +44,14 @@ const Register2 = () => {
                             <label className="text-xs text-vibiDarkBlue">Contraseña</label>
                             <InputRegister placeholder="Escribe tu correo" onChange={handleOnChange} value={form.password} name='password' />
                         </div>
-                        <ButtonVariants text="Envia tus datos" bgColor="bg-vibiOrange" txColor="text-white" width="w-full" border brColor="border-slate-400" />
+                        <ButtonVariants 
+                            text="Envía tus datos" bgColor="bg-vibiOrange" 
+                            txColor="text-white" 
+                            width="w-full" 
+                            border 
+                            brColor="border-slate-400"
+                            onClick={() => alert("Próximamente")} 
+                        />
                     </div>
                 </div>
             </div>

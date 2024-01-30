@@ -35,7 +35,7 @@ const Login = () => {
                         <label className="text-xs text-vibiDarkBlue">Contraseña</label>
                         <InputRegister placeholder="Escribe tu contraseña" onChange={handleOnChange} value={form.password} name='password' />
                     </div>
-                    <ButtonVariants text="Regístrate con tu celular" border={false} bgColor="bg-[#EC255A]" txColor="text-white" width="w-full" />
+                    <ButtonVariants text="Regístrate con tu celular" border={false} bgColor="bg-[#EC255A]" txColor="text-white" width="w-full" onClick={() => alert("Próximamente")}/>
                     <div className="w-[306px] h-[22px] justify-center items-center gap-2 inline-flex">
                         <div className="w-[140px] h-0 border border-slate-400"></div>
                         <div className="text-slate-400 text-lg font-normal leading-snug">o</div>

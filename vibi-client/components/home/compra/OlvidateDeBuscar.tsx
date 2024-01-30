@@ -34,6 +34,7 @@ const OlvidateDeBuscar = () => {
             txColor="text-vibiWhite"
             text="Empezar ahora"
             href={"/whatsapp"}
+            onClick={() => alert("Próximamente")}
           />
         </div>
       </div>

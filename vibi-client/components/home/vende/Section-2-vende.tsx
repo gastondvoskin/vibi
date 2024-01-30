@@ -22,6 +22,7 @@ export default function Section2() {
           txColor="text-vibiWhite"
           text="Empieza ahora"
           href="/cotiza-tu-casa"
+          onClick={() => alert("Próximamente")}
         />
       </div>
     </>

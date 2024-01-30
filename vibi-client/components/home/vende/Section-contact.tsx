@@ -28,7 +28,8 @@ export default function SectionContact() {
             border={false}
             bgColor="bg-primary"
             txColor="text-vibiWhite"
-            text="Programa un llamada"
+            text="Programa una llamada"
+            onClick={() => alert("Próximamente")}
           />
           </section>
           <section className="w-64 h-60 items-center justify-center text-center flex flex-wrap">
@@ -39,6 +40,7 @@ export default function SectionContact() {
             bgColor="bg-vibiGreen"
             txColor="text-vibiWhite"
             text="Conversemos"
+            onClick={() => alert("Próximamente")}
           />
           </section>
           </section>

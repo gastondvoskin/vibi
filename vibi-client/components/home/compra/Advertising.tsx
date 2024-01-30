@@ -64,8 +64,8 @@ const Advertising = ({current_price, previous_price}: AdvertisingProps) => {
           </div>
         </div>
 
-        <ButtonVariants text="Solicita una visita" onClick={() => console.log('Abre Whatsapp')} border bgColor='bg-primary' txColor="text-white" width="w-full" />
-        <ButtonVariants text="Contacta a un agente" onClick={() => console.log('Abre Whatsapp')} leftIcon={<RiWhatsappFill/>} border={false} bgColor="bg-vibiGreen" txColor="text-vibiWhite" width="w-full"/>
+        <ButtonVariants text="Solicita una visita" onClick={() => alert('Próximamente')} border bgColor='bg-primary' txColor="text-white" width="w-full" />
+        <ButtonVariants text="Contacta a un agente" onClick={() => alert('Próximamente')} leftIcon={<RiWhatsappFill/>} border={false} bgColor="bg-vibiGreen" txColor="text-vibiWhite" width="w-full"/>
       </div>
     </div>
   );
