@@ -27,7 +27,7 @@ export default function Section1() {
                 txColor="text-vibiWhite"
                 text="Empieza a vender"
                 href={'/crear-anuncio'}
-
+                onClick={() => alert("Próximamente")}
               />
               <ButtonVariants
                 border={true}
@@ -36,6 +36,7 @@ export default function Section1() {
                 txColor="text-vibiDarkBlue"
                 text="Cotiza tu casa gratis"
                 href={'/cotiza-tu-casa'}
+                onClick={() => alert("Próximamente")}
               />
             </section>
             <section className="flex space-x-1 items-center">

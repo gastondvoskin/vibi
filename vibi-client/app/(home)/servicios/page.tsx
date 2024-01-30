@@ -2,7 +2,7 @@
 export default function Servicios() {
   return (
     <main>
-      <h1>Dentro de nuestros servicios</h1>
+      <h1>Próximamente</h1>
     </main>
   )
 }

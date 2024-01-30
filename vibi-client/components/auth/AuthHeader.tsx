@@ -10,7 +10,9 @@ const AuthHeader = () => {
                 </Link>
             </div>
             <div className="w-fit h-12 px-6 py-3 flex rounded border border-slate-400 justify-center items-center">
-                <div className="text-center text-blue-950 text-base font-medium leading-none">Vuelve a Vibi</div>
+                <Link href="home">
+                    <div className="text-center text-blue-950 text-base font-medium leading-none">Vuelve a Vibi</div>
+                </Link>
             </div>
         </div>
     );

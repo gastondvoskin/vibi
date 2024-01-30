@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const ModalContent: React.FC<Props> = ({ onClose, content }) => {
-  console.log("Lleguie a modalcontent");
+  // console.log("Lleguie a modalcontent");
 
   return (
     <div className="w-fit h-[485px] p-10 border-2">

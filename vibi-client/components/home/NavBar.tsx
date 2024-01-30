@@ -16,15 +16,16 @@ export default function NavBar() {
           <Image src={"/logo.png"} className="mx-20 my-8" width={96} height={32} alt="Logo ViBi"></Image>
         </section>
         <section className="m-auto text-base flex">
-        <NavButton name="¿Cómo comprar?" route="/home" />
-        <NavButton name="Comprar" route="/compra" />
-        <NavButton name="Vende" route="/vende" />
-        <NavButton name="Financia" route="/financia" />
-        <NavButton name="Nuestros servicios" route="/servicios" />
+          <NavButton name="¿Cómo comprar?" route="/home" />
+          <NavButton name="Compra" route="/compra" />
+          <NavButton name="Vende" route="/vende" />
+        {/* "Financia" and "Nuestros servicios" sections will be commented until they are developed */}
+        {/* <NavButton name="Financia" route="/financia" />
+        <NavButton name="Nuestros servicios" route="/servicios" /> */}
         </section> 
         <section className="relative  m-auto flex space-x-4">
           <NavBarProfile/>
-          <ButtonVariants leftIcon={<RiWhatsappFill/>} border={false} bgColor="bg-vibiGreen" txColor="text-vibiWhite" text="Contáctanos"/>
+          <ButtonVariants leftIcon={<RiWhatsappFill/>} border={false} bgColor="bg-vibiGreen" txColor="text-vibiWhite" text="Contáctanos" onClick={() => alert("Próximamente")}/>
         </section>
       </nav>
     </>

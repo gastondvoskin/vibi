@@ -13,7 +13,7 @@ import { FilterReducer } from '../reducers/interfaces/interfaceReducers';
 
 export const getPublicationsAction = (page:number,filters:FilterReducer) => {
   const { city, maxPrice, propertyType, rooms } = filters;
-  console.log("filters en action", filters)
+  // console.log("filters en action", filters)
   let queryParams = [];
 
   if (city) {

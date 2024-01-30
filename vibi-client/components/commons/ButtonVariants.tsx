@@ -32,18 +32,29 @@ export default function ButtonVariants({ text, leftIcon, rightIcon, bgColor, txC
                 </section>
             </button>
         )
-    }
+    }; 
     return (
-        <>
-            <Link href={pathname + href} className={border ? `border ${brColor} ${bgColor}  rounded-[4px] px-6 py-3 flex  justify-center ${width} text-center` : ` ${bgColor}  rounded-[4px] px-6 py-3 flex justify-center ${width} text-center`}>
-                <section className={`${txColor} ` + "text-[24px]"}>
-                    {leftIcon}
-                </section>
-                <span className={`${rightIcon ? 'mr-2' : ''} ${leftIcon ? 'ml-2' : ''} ${txColor}`} >{text}</span>
-                <section className={`${txColor}` + "text-[24px]"}>
-                    {rightIcon}
-                </section>
-            </Link>
-        </>
+
+        // <Link href={pathname + href}>
+        //     <div className={border ? `border ${brColor} ${bgColor} rounded-[4px] px-6 py-3 flex justify-center ${width} text-center` : ` ${bgColor} rounded-[4px] px-6 py-3 flex justify-center ${width} text-center`}>
+        //         <section className={`${txColor} ` + "text-[24px]"}>
+        //             {leftIcon}
+        //         </section>
+        //         <span className={`${rightIcon ? 'mr-2' : ''} ${leftIcon ? 'ml-2' : ''} ${txColor}`} >{text}</span>
+        //         <section className={`${txColor}` + "text-[24px]"}>
+        //             {rightIcon}
+        //         </section>
+        //     </div>
+        // </Link>
+
+        <Link href={"" + href} className={border ? `border ${brColor} ${bgColor}  rounded-[4px] px-6 py-3 flex  justify-center ${width} text-center` : ` ${bgColor}  rounded-[4px] px-6 py-3 flex justify-center ${width} text-center`}>
+            <section className={`${txColor} ` + "text-[24px]"}>
+                {leftIcon}
+            </section>
+            <span className={`${rightIcon ? 'mr-2' : ''} ${leftIcon ? 'ml-2' : ''} ${txColor}`} >{text}</span>
+            <section className={`${txColor}` + "text-[24px]"}>
+                {rightIcon}
+            </section>
+        </Link>
     )
 }

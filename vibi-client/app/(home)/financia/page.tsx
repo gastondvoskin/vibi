@@ -2,7 +2,7 @@
 export default function Financia () {
   return (
     <main>
-      <h1>Vista financia</h1>
+      <h1>Próximamente</h1>
     </main>
 
   )

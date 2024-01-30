@@ -26,7 +26,7 @@ const SelectFilter: React.FC<SelectFilterProps> = ({ label, options,filter}) => 
  
     switch (name) {
       case "propertyType":
-        console.log(name,value);
+        // console.log(name,value);
         
         dispatch(setPropertyTypeFilter(value));
         break;
@@ -35,7 +35,7 @@ const SelectFilter: React.FC<SelectFilterProps> = ({ label, options,filter}) => 
         break;
       case "maxPrice":
         dispatch(setMaxPriceFilter(Number(value)));
-        console.log("maxPrice", value,name);
+        // console.log("maxPrice", value,name);
         break;
       case "city":
         dispatch(setCityFilter(value));
@@ -45,7 +45,7 @@ const SelectFilter: React.FC<SelectFilterProps> = ({ label, options,filter}) => 
         
         break;
     }
-    console.log(filterState);
+    // console.log(filterState);
     
   };
 

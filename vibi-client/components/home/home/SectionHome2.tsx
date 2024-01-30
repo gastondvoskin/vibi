@@ -1,3 +1,5 @@
+"use client"; 
+
 import ButtonVariants from "../../commons/ButtonVariants";
 
 const SectionHome2 = () => {
@@ -15,9 +17,17 @@ const SectionHome2 = () => {
                             Cuéntanos que estás buscando y nuestro sistema te mostrará las mejores alternativas e información para que tomes la decisión adecuada. ¡Sigamos logrando finales felices!
                         </p>
                     </div>
-                    <div className="flex flex-col items-start gap-4">
-                        <ButtonVariants text="Ver propiedades para comprar" border bgColor="bg-primary" txColor="text-white" width="w-[85%]" />
-                        <ButtonVariants text="¿Cómo comprar en Vibi?" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[85%]" />
+                    <div className="flex flex-col items-start gap-4 h-40" >
+                        {/* h-40 added to replace the unfunctional buttons */}
+                       {/*  <ButtonVariants 
+                            border={true}
+                            bgColor="bg-primary" 
+                            txColor="text-white" 
+                            width="w-[85%]" 
+                            href={"/compra"}
+                            text="Ver propiedades para comprar" 
+                        /> */}
+                        {/* <ButtonVariants text="¿Cómo comprar en Vibi?" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[85%]" onClick={() => alert("Próximamente")}/> */}
                     </div>
                 </div>
                 <div className="w-[40%] bg-[url('/home2.png')]">
@@ -28,7 +38,7 @@ const SectionHome2 = () => {
                         </h2>
                         <p className="font-normal mb-4">
                             Sino eres propietario o copropietario de una vivienda en todo el país y tus ingresos familiares mensuales que no excedan el valor de<strong> S/ 3,715.00. Accede al financiamiento que otorga el Estado.</strong></p>
-                        <ButtonVariants text="Aplica a este programa" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[75%]" />
+                        <ButtonVariants text="Aplica a este programa" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[75%]" onClick={() => alert("Próximamente")}/>
                     </div>
 
 

@@ -1,3 +1,4 @@
+"use client"; 
 import ButtonVariants from "../../commons/ButtonVariants";
 
 const SectionHome4 = () => {
@@ -15,8 +16,8 @@ const SectionHome4 = () => {
                             Te asesoramos en todo el proceso de venta de tu propiedad de forma segura, transparente y sobre todo online.</p>
                     </div>
                     <div className="flex flex-col items-start gap-4">
-                        <ButtonVariants text="Iniciar registro de propiedad" border bgColor="bg-primary" txColor="text-white" width="w-[85%]" />
-                        <ButtonVariants text="Ayúdame a vender con un agente" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[85%]" />
+                        <ButtonVariants text="Iniciar registro de propiedad" border bgColor="bg-primary" txColor="text-white" width="w-[85%]" onClick={() => alert("Próximamente")}/>
+                        <ButtonVariants text="Ayúdame a vender con un agente" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[85%]" onClick={() => alert("Próximamente")}/>
                     </div>
                 </div>
                 <div className="w-[40%] bg-[url('/home4.png')] h-[474px]">
@@ -28,7 +29,7 @@ const SectionHome4 = () => {
                         <p className="font-normal mb-4">
                             Nuestra herramienta esta disponible para que puedas realizar la tasación de tu propiedad online de forma segura y confidencial.
                         </p>
-                        <ButtonVariants text="Empezar con la tasación" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[75%]" />
+                        <ButtonVariants text="Empezar con la tasación" border brColor="border-primary" bgColor="bg-white" txColor="text-primary" width="w-[75%]" onClick={() => alert("Próximamente")} />
                     </div>
 
 
